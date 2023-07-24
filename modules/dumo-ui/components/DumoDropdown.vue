@@ -1,0 +1,83 @@
+<template>
+  <div class="relative" :style="styles">
+    <div class="dropdown-select text-x-small font-medium  flex items-center justify-between cursor-pointer"
+      @click="showDropdown = !showDropdown">
+      <span class="capitalize flex items-center gap-2">
+        <img v-if="modelValue && modelValue.image" :src="modelValue.image" alt="" />
+        <span v-if="modelValue">{{ modelValue.text }}</span>
+        <span v-if="!modelValue">{{ placeholder }}</span>
+      </span>
+      <span class="icon"><img class="cursor-pointer" src="/images/arrow-down.png" alt="" /></span>
+    </div>
+
+    <div v-click-outside="close" v-if="showDropdown" class="dropdown-menu text-x-small absolute">
+      <span v-for="(item, idx) in items" :key="idx" class="capitalize cursor-pointer flex items-center gap-2"
+        @click="selectItem(item)">
+        <span v-if="item.image">
+          <img :src="item.image" alt="" />
+        </span>
+        {{ item.text }}
+      </span>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+const props = defineProps<{
+  modelValue: { text: string; value: any, image?: string };
+  placeholder?: string;
+  items?: { text: string; value: any, image?: string }[];
+  width?: string;
+  background?: string;
+  color?: string;
+  border?: string;
+}>();
+
+const $emit = defineEmits(["update:modelValue"]);
+
+const showDropdown = ref(false);
+// const selected = ref<{ text: string; value?: string; image?: string }>();
+
+const close = () => {
+  showDropdown.value = false
+}
+
+const styles = {
+  ...(props.width && { width: props.width }),
+  ...(props.background && { background: props.background }),
+  ...(props.color && { color: props.color }),
+  ...(props.border && { border: props.border }),
+};
+
+const selectItem = (item: any) => {
+  // selected.value = item;
+  showDropdown.value = false;
+  $emit("update:modelValue", item);
+};
+</script>
+
+<style scoped>
+.dropdown-select {
+  width: 100%;
+  border-radius: 10px;
+  padding: 6px 10px;
+  border: 2px solid #E7EAF4;
+  color: #4B4B4D;
+  background-color: #FCFCFC;
+}
+
+.dropdown-menu {
+  width: 100%;
+  border-radius: 10px;
+  padding: 6px;
+  border: 2px solid #E7EAF4;
+  color: #4B4B4D;
+  background-color: #FCFCFC;
+}
+
+.icon {
+  height: 12px;
+  width: 12px;
+  margin-left: 10px;
+}
+</style>

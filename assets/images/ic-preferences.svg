@@ -1,0 +1,9 @@
+<svg id="ic-preferences" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <rect id="Rectangle_3946" data-name="Rectangle 3946" width="28" height="28" fill="#1e1f21"/>
+  <g id="ic-preference" transform="translate(8 8)">
+    <g id="Group_1300" data-name="Group 1300" transform="translate(4.063 4.063)">
+      <circle id="Ellipse_199" data-name="Ellipse 199" cx="1.937" cy="1.937" r="1.937" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+    <path id="Path_892" data-name="Path 892" d="M3247.795,1765.9v-2.26h-1.816a4.3,4.3,0,0,0-.426-1.03l1.284-1.283-1.6-1.6-1.284,1.284a4.369,4.369,0,0,0-1.03-.429v-1.813h-2.26v1.813a4.361,4.361,0,0,0-1.03.429l-1.284-1.284-1.6,1.6,1.284,1.283a4.34,4.34,0,0,0-.426,1.03h-1.816v2.26h1.816a4.332,4.332,0,0,0,.426,1.03l-1.284,1.284,1.6,1.6,1.284-1.284a4.361,4.361,0,0,0,1.03.429v1.813h2.26v-1.813a4.37,4.37,0,0,0,1.03-.429l1.284,1.284,1.6-1.6-1.284-1.284a4.292,4.292,0,0,0,.426-1.03Z" transform="translate(-3235.795 -1758.774)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg id="ic-verification" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <rect id="Rectangle_3946" data-name="Rectangle 3946" width="28" height="28" fill="#1e1f21"/>
+  <g id="ic-drivers-license" transform="translate(8.833 8)">
+    <path id="Path_311" data-name="Path 311" d="M3236.795,5567.129v-10.667a1.333,1.333,0,0,1,1.333-1.333h8.666a1.333,1.333,0,0,1,1.333,1.333v9.333a1.334,1.334,0,0,1-1.333,1.334h-7.7" transform="translate(-3236.795 -5555.129)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <g id="Group_355" data-name="Group 355" transform="translate(3.214 3.684)">
+      <line id="Line_159" data-name="Line 159" x2="1.696" transform="translate(0 4.632)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="Line_160" data-name="Line 160" x2="4.82" transform="translate(0 2.316)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="Line_161" data-name="Line 161" x2="4.905" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>
