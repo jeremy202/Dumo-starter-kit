@@ -2,8 +2,8 @@
   <NuxtLayout>
     <linear-loader v-if="requestsStore.hasActiveRequests" />
     <NuxtPage />
-    <NuxtSnackbar />
   </NuxtLayout>
+  <NuxtSnackbar />
 </template>
 
 <script setup lang="ts">

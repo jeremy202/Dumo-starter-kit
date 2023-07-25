@@ -37,7 +37,6 @@ export default defineNuxtConfig({
     top: true,
     right: true,
     duration: 3000,
-    zIndex: 10000,
   },
   runtimeConfig: {
     public: {
