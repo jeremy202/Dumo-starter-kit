@@ -1,6 +1,12 @@
 <template>
-  <div class="mx-auto font-extrabold text-2xl">
-    DUMO PROJECT STARTER TEMPLATE
+  <div class="mx-auto text-2xl font-extrabold">
+    <h1>DUMO PROJECT STARTER TEMPLATE</h1>
+  </div>
+
+  <div class="mx-auto mt-5">
+    <button class="button button-cta">
+      DUMO
+    </button>
   </div>
 </template>
 

@@ -28,20 +28,24 @@
   --success-dark: #3daa7e;
   --warning: #e5a461;
   --warning-light: #fbb56c;
+
+  /* Font weights */
+  --rustica-semi-light: 400;
+  --rustica-regular: 500;
+  --rustica-medium: 600;
+  --rustica-bold: 700;
+  --roc-grotesk-medium: 500;
+  --roc-grotesk-bold: 600;
 }
 
 /* defaults */
 body {
   font-family: 'rustica', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0px;
   color: var(--dark-gray-50);
-  font-weight: normal;
+  font-weight: var(--rustica-semi-light);
   overflow-x: hidden;
-}
-
-p {
-  color: var(--dark);
 }
 
 a {
@@ -57,7 +61,7 @@ h4,
 h5,
 h6 {
   font-family: 'roc-grotesk', sans-serif;
-  font-weight: bold;
+  font-weight: var(--roc-grotesk-bold);
   color: var(--dark);
 }
 
@@ -83,67 +87,77 @@ h6 {
 /* sub header */
 .sub-header {
   font-family: 'roc-grotesk', sans-serif;
-  color: var(--dark-gray-75);
-  font-weight: 500;
+  font-weight: var(--roc-grotesk-medium);
   font-size: 14px;
   letter-spacing: 1.12px;
   text-transform: uppercase;
+  color: var(--dark);
 }
 
 /* small subheader */
 .sub-header--small {
   font-family: 'roc-grotesk', sans-serif;
-  color: var(--dark-gray-75);
-  font-weight: 500;
+  font-weight: var(--roc-grotesk-medium);
   letter-spacing: 0.96px;
   font-size: 12px;
   text-transform: uppercase;
+  color: var(--dark);
 }
 
 .title {
   font-family: 'roc-grotesk', sans-serif;
-  color: var(--dark);
-  font-weight: bold;
+  font-weight: var(--roc-grotesk-bold);
   font-size: 40px;
+  color: var(--dark);
 }
 
 .big-title {
   font-family: 'roc-grotesk', sans-serif;
-  color: var(--dark);
-  font-weight: bold;
+  font-weight: var(--roc-grotesk-bold);
   font-size: 64px;
+  color: var(--dark);
 }
 
-.label-text {
-  font-size: 12px;
-  color: var(--dark-gray-50);
-  text-transform: capitalize;
-}
-
-.text {
-  font-size: 16px;
-}
-
+/* Font sizes */
 .text-mid {
   font-size: 18px;
 }
-
 .text-big {
   font-size: 20px;
 }
-
 .text-small {
   font-size: 14px;
 }
-
 .text-x-small {
   font-size: 12px;
 }
-
 .text-xx-small {
   font-size: 10px;
 }
 
+/* Font weights */
+.roc-grotesk--medium {
+  font-family: 'roc-grotesk', sans-serif;
+  font-weight: var(--roc-grotesk-medium);
+}
+.roc-grotesk--bold {
+  font-family: 'roc-grotesk', sans-serif;
+  font-weight: var(--roc-grotesk-bold);
+}
+.rustica--semi-light {
+  font-family: 'rustica', sans-serif;
+  font-weight: var(--rustica-semi-light);
+}
+.rustica--medium {
+  font-family: 'rustica', sans-serif;
+  font-weight: var(--rustica-medium);
+}
+.rustica--bold {
+  font-family: 'rustica', sans-serif;
+  font-weight: var(--rustica-bold);
+}
+
+/* Colors */
 .text-primary {
   color: var(--main-blue);
 }
@@ -218,23 +232,51 @@ tr {
 
 /* buttons */
 .button {
+  background-color: var(--main-blue);
   border-radius: 14px;
   color: #fff;
-  font-weight: 500;
+  font-weight: var(--rustica-regular);
+  font-size: 16px;
   padding: 14px 16px;
   line-height: 1.2;
   display: inline-flex;
   white-space: nowrap;
   cursor: pointer;
   position: relative;
-  background-color: var(--main-blue);
 }
 
-.button.alternate {
+.button-secondary {
+  color: var(--primary);
+  background-color: #dce0ee;
+}
+
+.button-alternate {
   background-color: #e9ecf7;
   border-radius: 10px;
   color: var(--main-blue);
-  padding: 8px 12px;
+}
+
+.button-cta::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  border: 1.5px solid var(--primary);
+  border-radius: 14px;
+  bottom: -5px;
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  transform: skewY(-3deg);
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.button-cta:hover::after {
+  transform: skewY(3deg);
+}
+
+.button-light {
+  background-color: var(--main-light);
 }
 
 .button-small {
@@ -256,6 +298,21 @@ tr {
 .button-xs {
   font-size: 13px;
   padding: 8px 14px;
+}
+
+.button-link {
+  color: var(--main-light);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.72px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-link.success {
+  color: var(--primary-green);
 }
 
 .demo-image-wrapper {
