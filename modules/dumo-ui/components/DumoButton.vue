@@ -1,13 +1,15 @@
 <template>
-  <button class="btn" :class="classes" :style="styles" v-bind="$attrs">
+  <button class="button" :class="classes" :style="styles" v-bind="$attrs">
     <slot></slot>
   </button>
 </template>
 
 <script setup lang="ts">
 const props = defineProps<{
-  blue?: boolean
   secondary?: boolean;
+  cta?: boolean
+  alt?: boolean
+  lg?: boolean;
   sm?: boolean;
   xs?: boolean;
   bg?: string;
@@ -18,10 +20,12 @@ const props = defineProps<{
 }>();
 
 const classes = {
-  ["btn-blue"]: props.blue,
-  ["btn-secondary"]: props.secondary,
-  ["btn-sm"]: props.sm,
-  ["btn-xs"]: props.xs,
+  ["button-secondary"]: props.secondary,
+  ["button-cta"]: props.cta,
+  ["button-alt"]: props.alt,
+  ["button-small"]: props.sm,
+  ["button-large"]: props.lg,
+  ["button-xs"]: props.xs,
   ["center"]: props.center
 };
 
@@ -34,49 +38,72 @@ const styles = {
 </script>
 
 <style scoped>
-.btn {
-  background: #274BAD;
+.button {
+  background-color: var(--main-blue);
   border-radius: 14px;
   color: #fff;
-  /* font-family: "Avenir Next" !important; */
+  font-weight: var(--rustica-regular);
   font-size: 16px;
-  font-style: normal;
-  /* font-weight: 500; */
   padding: 14px 16px;
   line-height: 1.2;
   display: inline-flex;
   white-space: nowrap;
+  cursor: pointer;
+  position: relative;
 }
 
+.button-secondary {
+  color: var(--primary);
+  background-color: #dce0ee;
+}
+
+.button-alt {
+  background-color: #e9ecf7;
+  border-radius: 10px;
+  color: var(--main-blue);
+}
+
+.button-cta::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  border: 1.5px solid var(--primary);
+  border-radius: 14px;
+  bottom: -5px;
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  transform: skewY(-3deg);
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.button-cta:hover::after {
+  transform: skewY(3deg);
+}
+
+.button-small {
+  border-radius: 10px;
+  font-size: 13px;
+  padding: 11px 16px;
+}
+
+.button-large {
+  padding: 18px 32px;
+}
+
+.button-xs {
+  font-size: 13px;
+  padding: 8px 14px;
+}
 .center {
   justify-content: center;
   align-items: center;
 }
 
-.btn[disabled] {
+.button[disabled] {
   background-color: #bcbcbc;
   color: #4a4a4a;
   cursor: not-allowed;
-}
-
-.btn-secondary {
-  background: #e7eaf4;
-  color: #1a308f;
-}
-.btn-blue{
-  background: #0E62AF;
-  color: #FFFFFF;
-}
-
-.btn-sm {
-  border-radius: 4px;
-  font-size: 14px;
-  padding: 7px 19px;
-}
-
-.btn-xs {
-  border-radius: 4px;
-  font-size: 13px;
-  padding: 8px 16px;
 }
 </style>

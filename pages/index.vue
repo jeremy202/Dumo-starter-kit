@@ -4,9 +4,9 @@
   </div>
 
   <div class="mx-auto mt-5">
-    <button class="button button-cta">
+    <DumoButton>
       DUMO
-    </button>
+    </DumoButton>
   </div>
 </template>
 
