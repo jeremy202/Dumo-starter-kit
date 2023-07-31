@@ -6,16 +6,16 @@
     <label v-if="!defaultLabel" class="dumo-input-label">{{ props.label }}</label>
     <!-- <span class="dumo-floating-label">Your email address</span> -->
 
-    <span class="text-xs" style="color: #d63b3b" v-if="errorMessage">
+    <span class="text-xs" style="color: #C33434" v-if="errorMessage">
       {{ errorMessage }}
     </span>
     <div v-if="props.prepend" class="prepend" :class="{ success: success }">{{ prepend }}</div>
     <div v-if="props.type === 'password'" @click="togglePassword">
-      <img class="cursor-pointer eye-icon" v-if="hidePassword" src="~~/assets/images/unhide.svg" alt="" />
-      <img class="cursor-pointer eye-icon" v-else src="~~/assets/images/hide.svg" alt="" />
+      <img class="cursor-pointer icon" v-if="hidePassword" src="~~/assets/images/unhide.svg" alt="" />
+      <img class="cursor-pointer icon" v-else src="~~/assets/images/hide.svg" alt="" />
     </div>
     <div v-if="props.success">
-      <img class="cursor-pointer eye-icon" src="~~/assets/images/ic-verified.svg" alt="" />
+      <img class="cursor-pointer icon" src="~~/assets/images/ic-verified.svg" alt="" />
     </div>
   </div>
 </template>
@@ -52,26 +52,10 @@ const togglePassword = () => {
 <style scoped src="../assets/css/inputs.css"></style>
 
 <style scoped>
-.prepend {
-  position: absolute;
-  left: 9px;
-  top: -18px;
-  margin: 12px 10px;
-  font-size: 11px;
-  z-index: 1;
-  color: #787879;
-  padding: 0 2px;
-  background-color: #FFFFFF
-}
-
-.prepend.success {
-  color: #3DAA7E;
-}
-
-.eye-icon {
+.icon {
   position: absolute;
   right: 10px;
-  top: 14px;
+  top: 18px;
   height: 16px;
   width: 16px;
   z-index: 1;

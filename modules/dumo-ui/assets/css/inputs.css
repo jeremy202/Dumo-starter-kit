@@ -3,13 +3,12 @@
   top: 0;
   left: 0;
   user-select: none;
-  /* z-index: 1; */
 }
 
 .default-input-label {
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0px;
-  color: #7a809b;
+  color: #4B4B4D;
 }
 
 .dumo-select-field,
@@ -28,9 +27,10 @@
   outline: 0;
   box-shadow: 0;
 }
+
 .dumo-input-field::placeholder {
   /* color: transparent; */
-  color: #646a86;
+  color: #b5b5b5;
   opacity: 0.35;
   font-size: 14px;
 }
@@ -43,7 +43,7 @@
   line-height: 1.2;
   display: block;
   width: 100%;
-  color: #4a4a4a;
+  color: #1E1F21;
 }
 
 .dumo-input-field,
@@ -56,7 +56,7 @@
 .dumo-select-field,
 .dumo-input-field {
   border-radius: 14px;
-  padding: 10px 16px;
+  padding: 14px 12px;
   transition: border-color 0.25s ease-in-out;
   border: 2px solid #e7eaf4;
   background-color: transparent;
@@ -65,7 +65,7 @@
 .dumo-select-field + .dumo-input-label,
 .dumo-input-field + .dumo-input-label {
   position: absolute;
-  top: 12px;
+  top: 14px;
   left: 14px;
   display: inline-block;
   width: auto;
@@ -79,10 +79,10 @@
 .dumo-input-field:not(:placeholder-shown) + .dumo-input-label, */
 .dumo-input-field:focus + .dumo-input-label,
 .dumo-select-field:not([data-value='']) + .dumo-input-label {
-  z-index: 500;
+  z-index: 1;
   padding: 0 1px;
   transform: translate(-3px, -19px) scale(0.8);
-  color: #b5b5b5;
+  color: #1E1F21;
   background-color: white;
 }
 
@@ -93,25 +93,24 @@
 
 .dumo-input-field:focus + .dumo-input-label,
 .dumo-select-field:focus + .dumo-input-label {
-  color: #787879;
+  color: #1E1F21;
 }
 
 .dumo-input-field.error,
 .dumo-select-field.error {
-  border-color: #d63b3b !important;
-  color: #d63b3b !important;
+  border-color: #c33434 !important;
+  /* color: #c33434 !important; */
 }
 
 .dumo-input-field.error + .dumo-input-label,
 .dumo-select-field.error + .dumo-input-label {
-  color: #d63b3b !important;
+  color: #c33434 !important;
 }
 
 .dumo-input-field.success,
 .dumo-select-field.success {
   border-color: #3daa7e !important;
-  color: #3daa7e !important;
-
+  /* color: #3daa7e !important; */
 }
 
 .dumo-input-field.success + .dumo-input-label,
@@ -132,6 +131,22 @@
 }
 
 .dumo-input-field[disabled].success {
-  background: #F2FAF7;
+  background: #f2faf7;
   opacity: 1;
+}
+
+.prepend {
+  position: absolute;
+  left: 9px;
+  top: -17px;
+  margin: 12px 10px;
+  font-size: 12px;
+  z-index: 1;
+  color: #1E1F21;
+  padding: 0 1px;
+  background-color: #FFFFFF;
+}
+
+.prepend.success {
+  color: #3DAA7E;
 }

@@ -4,14 +4,15 @@
     <textarea
       class="dumo-input-field"
       :class="{ error: error }"
-      placeholder="placeholder"
+      placeholder=""
       v-bind="$attrs"
       @input="onChange"
       :value="modelValue"
       >{{ modelValue }}</textarea
     >
     <label v-if="!defaultLabel" class="dumo-input-label">{{ props.label }}</label>
-    <span class="text-xs" style="color: #d63b3b" v-if="errorMessage">
+    <div v-if="props.prepend" class="prepend">{{ prepend }}</div>
+    <span class="text-xs" style="color: #C33434" v-if="errorMessage">
       {{ errorMessage }}
     </span>
   </div>
@@ -24,6 +25,7 @@ const props = defineProps({
   defaultLabel: { type: Boolean, default: false },
   error: { type: Boolean },
   errorMessage: { type: String },
+  prepend: { type: String },
 });
 const $emit = defineEmits(["update:modelValue"]);
 

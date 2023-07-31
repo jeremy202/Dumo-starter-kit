@@ -1,8 +1,8 @@
 <template>
   <div class="relative" :style="styles">
-    <div class="dropdown-select text-x-small font-medium  flex items-center justify-between cursor-pointer"
+    <div class="flex items-center justify-between font-medium cursor-pointer dropdown-select text-x-small"
       @click="showDropdown = !showDropdown">
-      <span class="capitalize flex items-center gap-2">
+      <span class="flex items-center gap-2 capitalize">
         <img v-if="modelValue && modelValue.image" :src="modelValue.image" alt="" />
         <span v-if="modelValue">{{ modelValue.text }}</span>
         <span v-if="!modelValue">{{ placeholder }}</span>
@@ -10,8 +10,8 @@
       <span class="icon"><img class="cursor-pointer" src="/images/arrow-down.png" alt="" /></span>
     </div>
 
-    <div v-click-outside="close" v-if="showDropdown" class="dropdown-menu text-x-small absolute">
-      <span v-for="(item, idx) in items" :key="idx" class="capitalize cursor-pointer flex items-center gap-2"
+    <div v-click-outside="close" v-if="showDropdown" class="absolute dropdown-menu text-x-small">
+      <span v-for="(item, idx) in items" :key="idx" class="flex items-center gap-2 capitalize cursor-pointer"
         @click="selectItem(item)">
         <span v-if="item.image">
           <img :src="item.image" alt="" />

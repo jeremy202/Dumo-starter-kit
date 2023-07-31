@@ -173,12 +173,12 @@ const deleteTags = (tag: string)=> {
 
 .dumo-input-field.error,
 .dumo-select-field.error {
-  border-color: #d63b3b !important;
-  color: #d63b3b !important;
+  border-color: #C33434 !important;
+  color: #C33434 !important;
 }
 
 .dumo-input-field.error + .dumo-input-label {
-  color: #d63b3b;
+  color: #C33434;
 }
 
 .dumo-input-field:-webkit-autofill,

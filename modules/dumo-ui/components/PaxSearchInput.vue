@@ -21,7 +21,7 @@
         @input="onChange"
         v-bind="$attrs"
       />
-      <span class="text-xs" style="color: #d63b3b" v-if="errorMessage">
+      <span class="text-xs" style="color: #C33434" v-if="errorMessage">
         {{ errorMessage }}
       </span>
       <div v-if="prepend" class="prepend">{{ prepend }}</div>

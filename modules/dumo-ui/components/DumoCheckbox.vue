@@ -36,7 +36,7 @@
       </label>
     </div>
 
-    <span class="text-xs" style="color: #d63b3b" v-if="errorMessage">
+    <span class="text-xs" style="color: #C33434" v-if="errorMessage">
       {{ errorMessage }}
     </span>
   </div>
