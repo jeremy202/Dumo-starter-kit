@@ -11,8 +11,11 @@
     </div>
 
     <div v-click-outside="close" v-if="showDropdown" class="absolute dropdown-menu text-x-small">
-      <span v-for="(item, idx) in items" :key="idx" class="flex items-center gap-2 capitalize cursor-pointer"
+      <span v-for="(item, idx) in items" :key="idx" class="flex items-center gap-2 capitalize cursor-pointer drop-conten-padding"
         @click="selectItem(item)">
+        <span v-if="item.image">
+          <img :src="item.image" alt="" />
+        </span>
         {{ item.text }}
       </span>
     </div>
@@ -23,7 +26,7 @@
 const props = defineProps<{
   modelValue: { text: string; value: any, image?: string };
   placeholder?: string;
-  items?: { text: string; value: any, image?: string }[];
+  items?: { text: string; value: any };
   width?: string;
   background?: string;
   color?: string;
@@ -56,8 +59,8 @@ const selectItem = (item: any) => {
 <style scoped>
 .dropdown-select {
   width: 100%;
-  border-radius: 10px;
-  padding: 6px 10px;
+  border-radius: 14px;
+  padding: 14px 16px;
   border: 2px solid #E7EAF4;
   color: #4B4B4D;
   background-color: #FCFCFC;
@@ -65,11 +68,17 @@ const selectItem = (item: any) => {
 
 .dropdown-menu {
   width: 100%;
-  border-radius: 10px;
-  padding: 6px;
+  margin-top: 4px;
+  padding: 10px 0;
+  border-radius: 4px 4px 14px 14px;
   border: 2px solid #E7EAF4;
   color: #4B4B4D;
-  background-color: #FCFCFC;
+  background-color: #EBEBEB;
+  position: absolute;
+  z-index: 2;
+}
+.drop-conten-padding {
+  padding: 10px 16px;
 }
 
 .icon {
