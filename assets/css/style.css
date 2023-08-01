@@ -113,7 +113,6 @@ h6 {
   font-family: 'roc-grotesk', sans-serif;
   font-weight: var(--roc-grotesk-bold);
   font-size: 40px;
-    color: var(--dark);
   color: var(--dark);
 }
 
@@ -244,22 +243,6 @@ tr:hover {
 
 tr {
   border-bottom: 1px solid #e8e2e8;
-}
-
-/* buttons */
-.button-link {
-  color: var(--main-light);
-  font-weight: 600;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.72px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.button-link.success {
-  color: var(--primary-green);
 }
 
 .demo-image-wrapper {
