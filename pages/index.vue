@@ -13,6 +13,10 @@
       DUMO Button link
     </DumoButtonLink>
   </div>
+
+  <div class="mx-auto mt-5">
+    <DumoToggle />
+  </div>
 </template>
 
 <script setup lang="ts">

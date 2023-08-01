@@ -1,5 +1,5 @@
 <template>
-  <label class="custom-switch">
+  <label class="custom-switch" :class="classes">
     <input v-bind="$attrs" type="checkbox" :checked="isChecked" @change="toggleCheckbox">
     <span class="slider"></span>
     <slot></slot>
@@ -7,14 +7,19 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps(['modelValue']);
+// const props = defineProps(['modelValue']);
+const props = defineProps<{
+  modelValue?: boolean
+  sm?: boolean
+}>();
+
+const classes = {
+  ["toggle-small"]: props.sm,
+};
+
 const emit = defineEmits(["update:checked"]);
 
 const isChecked = ref(props.modelValue);
-
-// const toggleCheckbox = (e: any) => {
-//   emit('update:checked', e.target.checked)
-// };
 
 const toggleCheckbox = (e: Event) => {
   if (e.target instanceof HTMLInputElement) {
@@ -31,6 +36,11 @@ const toggleCheckbox = (e: Event) => {
   display: inline-block;
   width: 49px;
   height: 22px;
+}
+
+.toggle-small {
+  width: 30px;
+  height: 17px;
 }
 
 .custom-switch input {
@@ -63,11 +73,22 @@ const toggleCheckbox = (e: Event) => {
   transition: 0.4s;
 }
 
+.toggle-small .slider:before {
+  height: 14px;
+  width: 14px;
+  left: 2.5px;
+  top: 1.5px;
+}
+
 input:checked+.slider {
   background-color: #24b57a;
 }
 
 input:checked+.slider:before {
   transform: translateX(23px);
+}
+
+.toggle-small input:checked+.slider:before {
+  transform: translateX(11px);
 }
 </style>
