@@ -1,37 +1,27 @@
 <template>
   <div>
     <label class="container">
-      <input 
-        type="radio"
-        :class="{ error: error }"
-        :value="props.modelValue"
-        @input="onChange"
-        v-bind="$attrs"
-      >
+      <input type="radio" :class="{ error: error }" :value="props.modelValue" @input="onChange" v-bind="$attrs">
       <span class="checkmark"></span>
     </label>
   </div>
 </template>
 
 <script setup lang="ts">
-  const props = defineProps({
-    label: { type: String },
-    error: { type: Boolean },
-    defaultLabel: { type: Boolean, default: false },
-    errorMessage: { type: String },
-    modelValue: {},
-    prepend: { type: String },
-  });
+const props = defineProps({
+  label: { type: String },
+  error: { type: Boolean },
+  defaultLabel: { type: Boolean, default: false },
+  errorMessage: { type: String },
+  modelValue: { type: String },
+  prepend: { type: String },
+});
 
-  const $emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:modelValue"]);
 
-  const onChange = (e: any) => {
-    $emit("update:modelValue", e.target.value);
-  };
-
-  const computedType = computed(() => {
-    return props.type === 'radio' ? props.type : 'checkbox';
-  })
+const onChange = (e: any) => {
+  emit("update:modelValue", e.target.value);
+};
 </script>
 
 <style scoped>
@@ -67,13 +57,14 @@
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.container:hover input~.checkmark {
   background-color: #FFFFFF;
 }
 
 /* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #57B27F;
+.container input:checked~.checkmark {
+  border: 1px solid #3DAA7E;
+  background-color: #FFFFFF;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -84,17 +75,17 @@
 }
 
 /* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
+.container input:checked~.checkmark:after {
   display: block;
 }
 
 /* Style the indicator (dot/circle) */
 .container .checkmark:after {
- 	top: 4px;
-	left: 4px;
-	width: 6px;
-	height: 6px;
-	border-radius: 50%;
-	background: white;
+  top: 4px;
+  left: 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3DAA7E;
 }
 </style>
