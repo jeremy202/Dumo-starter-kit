@@ -125,49 +125,53 @@ h6 {
 
 /* Font sizes */
 .big-paragraph {
-  font-family: 'roc-grotesk', sans-serif;
+  font-family: 'rustica', sans-serif;
   font-weight: var(--rustica-semi-light);
   font-size: 20px;
 }
 .mid-paragraph {
-  font-family: 'roc-grotesk', sans-serif;
+  font-family: 'rustica', sans-serif;
   font-weight: var(--rustica-semi-light);
   font-size: 18px;
 }
 .small-paragraph {
-  font-family: 'roc-grotesk', sans-serif;
+  font-family: 'rustica', sans-serif;
   font-weight: var(--rustica-semi-light);
   font-size: 14px;
 }
 .x-small-paragraph {
-  font-family: 'roc-grotesk', sans-serif;
+  font-family: 'rustica', sans-serif;
   font-weight: var(--rustica-semi-light);
   font-size: 12px;
 }
 .xx-small-paragraph {
-  font-family: 'roc-grotesk', sans-serif;
+  font-family: 'rustica', sans-serif;
   font-weight: var(--rustica-semi-light);
   font-size: 10px;
 }
 
 /* Font weights */
-.roc-grotesk--medium {
+.roc-grotesk-medium {
   font-family: 'roc-grotesk', sans-serif;
   font-weight: var(--roc-grotesk-medium);
 }
-.roc-grotesk--bold {
+.roc-grotesk-bold {
   font-family: 'roc-grotesk', sans-serif;
   font-weight: var(--roc-grotesk-bold);
 }
-.rustica--semi-light {
+.rustica-semi-light {
   font-family: 'rustica', sans-serif;
   font-weight: var(--rustica-semi-light);
 }
-.rustica--medium {
+.rustica-regular {
+  font-family: 'rustica', sans-serif;
+  font-weight: var(--rustica-regular);
+}
+.rustica-medium {
   font-family: 'rustica', sans-serif;
   font-weight: var(--rustica-medium);
 }
-.rustica--bold {
+.rustica-bold {
   font-family: 'rustica', sans-serif;
   font-weight: var(--rustica-bold);
 }

@@ -14,39 +14,37 @@
       <DumoTextArea v-model="form.password" :label="form.password ? '' : 'Text area'"
         :prepend="form.password ? 'Text area' : ''"></DumoTextArea>
     </div>
-    <div class="max-w-xs mt-5">
-      <DumoDropdownBig placeholder="- Select Organisation -" :items="organisation" />
-    </div>
-    <div class="max-w-xs mt-5">
-      <DumoInputStat placeholder="Select Organisation"  />
-    </div>
 
-    <div class="flex flex-col justify-center ml-60">
+    <div class="flex flex-col justify-center ml-[40vw]">
       <div class="max-w-xs mt-5">
-        <dumo-select label="- Select Organisation -" :items="organisation"></dumo-select>
+        <DumoDropdownBig placeholder="- Select Organization -" :items="organizations" v-model="organization" />
       </div>
       <div class="max-w-xs mt-5">
-        <dumo-select v-model="form.country" required>
-          <option value disabled selected>— Country —</option>
-        </dumo-select>
+        <dumo-select label="- Select Organization -" :items="organizations"></dumo-select>
       </div>
+      <div class="max-w-xs mt-5">
+        <div class="max-w-xs mt-5">
+          <DumoDropdown placeholder="- Select Organization -" :items="organizations" v-model="organization" />
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto mt-5">
+      <DumoButton cta>
+        DUMO
+      </DumoButton>
+    </div>
+    <div class="mx-auto mt-5">
+      <DumoButtonLink to="/" image="/assets/images/ic-green-check.svg">
+        DUMO Button link
+      </DumoButtonLink>
+    </div>
+
+    <div class="mx-auto mt-5">
+      <DumoToggle />
     </div>
   </div>
 
-  <div class="mx-auto mt-5">
-    <DumoButton cta>
-      DUMO
-    </DumoButton>
-  </div>
-  <div class="mx-auto mt-5">
-    <DumoButtonLink to="/" image="/assets/images/ic-green-check.svg">
-      DUMO Button link
-    </DumoButtonLink>
-  </div>
-
-  <div class="mx-auto mt-5">
-    <DumoToggle />
-  </div>
 
   <!-- <div class="mx-auto mt-5">
     <DumoSearchInput v-model="form.email" name="email" :prepend="form.email ? 'Your email' : ''"
@@ -62,7 +60,7 @@ const form = reactive({
   country: ""
 });
 
-const organisation = [{
+const organizations = [{
   text: 'Chigisoft',
   value: 'chigisoft'
 },
@@ -70,6 +68,8 @@ const organisation = [{
   text: 'DUMO Ava',
   value: 'ava'
 }]
+
+const organization = ref(organizations[0])
 </script>
 
 <style scoped></style>
