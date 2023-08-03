@@ -14,6 +14,12 @@
       <DumoTextArea v-model="form.password" :label="form.password ? '' : 'Text area'"
         :prepend="form.password ? 'Text area' : ''"></DumoTextArea>
     </div>
+    <div class="max-w-xs mt-5">
+      <DumoDropdownBig placeholder="- Select Organisation -" :items="organisation" />
+    </div>
+    <div class="max-w-xs mt-5">
+      <DumoInputStat placeholder="Select Organisation"  />
+    </div>
 
     <div class="flex flex-col justify-center ml-[40vw]">
       <div class="max-w-xs mt-5">
