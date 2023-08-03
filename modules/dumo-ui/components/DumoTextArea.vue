@@ -1,15 +1,8 @@
 <template>
   <div class="dumo-input-wrapper">
     <label v-if="defaultLabel" class="default-input-label">{{ props.label }}</label>
-    <textarea
-      class="dumo-input-field"
-      :class="{ error: error }"
-      placeholder=""
-      v-bind="$attrs"
-      @input="onChange"
-      :value="modelValue"
-      >{{ modelValue }}</textarea
-    >
+    <textarea class="dumo-input-field dumo-text-area" :class="{ error: error }" placeholder="" v-bind="$attrs"
+      @input="onChange" :value="modelValue">{{ modelValue }}</textarea>
     <label v-if="!defaultLabel" class="dumo-input-label">{{ props.label }}</label>
     <div v-if="props.prepend" class="prepend">{{ prepend }}</div>
     <span class="text-xs" style="color: #C33434" v-if="errorMessage">

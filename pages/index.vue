@@ -19,21 +19,8 @@
       <div class="max-w-xs mt-5">
         <DumoDropdownBig placeholder="- Select Organization -" :items="organizations" v-model="organization" />
       </div>
-      <div class="max-w-xs mt-5">
-        <dumo-select label="- Select Organization -" :items="organizations"></dumo-select>
-      </div>
-      <div class="max-w-xs mt-5">
-        <div class="max-w-xs mt-5">
-          <DumoDropdown placeholder="- Select Organization -" :items="organizations" v-model="organization" />
-        </div>
-      </div>
     </div>
 
-    <div class="mx-auto mt-5">
-      <DumoButton cta>
-        DUMO
-      </DumoButton>
-    </div>
     <div class="mx-auto mt-5">
       <DumoButtonLink to="/" image="/assets/images/ic-green-check.svg">
         DUMO Button link

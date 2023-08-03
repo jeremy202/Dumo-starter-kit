@@ -22,6 +22,10 @@
   appearance: none;
 }
 
+.dumo-text-area {
+  height: 100px;
+}
+
 .dumo-select-field,
 .dumo-input-field:focus {
   outline: 0;
@@ -71,7 +75,7 @@
 .dumo-select-field + .dumo-input-label,
 .dumo-input-field + .dumo-input-label {
   position: absolute;
-  top: 14px;
+  top: 11px;
   left: 14px;
   display: inline-block;
   width: auto;
@@ -143,8 +147,8 @@
 
 .prepend {
   position: absolute;
-  left: 9px;
-  top: -17px;
+  left: 8px;
+  top: -21px;
   margin: 12px 10px;
   font-size: 12px;
   z-index: 1;
