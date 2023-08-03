@@ -15,9 +15,6 @@
         :prepend="form.password ? 'Text area' : ''"></DumoTextArea>
     </div>
     <div class="max-w-xs mt-5">
-      <DumoDropdownBig placeholder="- Select Organisation -" :items="organisation" />
-    </div>
-    <div class="max-w-xs mt-5">
       <DumoInputStat placeholder="Select Organisation"  />
     </div>
 
