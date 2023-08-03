@@ -24,6 +24,10 @@
 
 .dumo-text-area {
   height: 100px;
+
+  @media (max-width: 768px) {
+    height: 135px;
+  }
 }
 
 .dumo-select-field,
