@@ -23,6 +23,10 @@ const closeModal = () => {
 onMounted(() => {
   document.body.style.overflowY = "hidden";
 });
+
+onUnmounted(() => {
+  document.body.style.overflowY = "auto";
+});
 </script>
 
 <style scoped>
