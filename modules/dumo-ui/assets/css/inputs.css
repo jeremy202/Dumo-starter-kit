@@ -79,7 +79,7 @@
 .dumo-select-field + .dumo-input-label,
 .dumo-input-field + .dumo-input-label {
   position: absolute;
-  top: 11px;
+  top: 14px;
   left: 14px;
   display: inline-block;
   width: auto;
@@ -95,7 +95,7 @@
 .dumo-select-field:not([data-value='']) + .dumo-input-label {
   z-index: 1;
   padding: 0 1px;
-  transform: translate(-3px, -19px) scale(0.8);
+  transform: translate(-3px, -23px) scale(0.8);
   color: #1e1f21;
   background-color: white;
 }
