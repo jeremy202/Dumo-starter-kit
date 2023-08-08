@@ -46,6 +46,7 @@ onUnmounted(() => {
   z-index: 1;
   overflow-y: auto;
   height: 100vh;
+
 }
 
 .modal-left {
@@ -57,6 +58,13 @@ onUnmounted(() => {
   bottom: 0;
   padding: 42px 39px;
   overflow-y: auto;
+
+  @media (max-width:768px) {
+    width: 100%;
+    top: 20%;
+    border-radius: 24px 24px 0px 0px;
+    padding: 42px 20px;
+  }
 }
 
 .modal-center {
