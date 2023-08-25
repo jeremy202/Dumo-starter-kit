@@ -49,7 +49,10 @@ const togglePassword = () => {
 };
 </script>
 
-<style scoped src="~~/assets/css/inputs.css"></style>
+<style scoped src="https://github.com/jeremy202/Dumo-starter-kit/blob/main/assets/css/inputs.css"></style>
+<!-- <style scoped src="~~/assets/css/inputs.css"></style> -->
+
+
 <style scoped>
 .icon {
   position: absolute;
