@@ -27,4 +27,3 @@ const onChange = (e: any) => {
 };
 </script>
 
-<style scoped src="../assets/css/inputs.css"></style>

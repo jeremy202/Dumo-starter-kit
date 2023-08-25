@@ -56,10 +56,6 @@
   };
 </script>
 
-
-
-
-
 <style scoped>
 /* The container */
 .container {

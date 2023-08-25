@@ -4,10 +4,28 @@
       <div class="custom-label-ava">
         ava.dumo.io/
       </div>
-      <input class="custom-input-ava" placeholder="school-name" />
+      <input :type="type" class="custom-input-ava" placeholder="school-name" :value="props.modelValue" @input="onChange"
+        v-bind="$attrs" />
     </div>
   </div>
 </template>
+
+
+<script setup lang="ts">
+const props = defineProps({
+  placeholder: { type: String },
+  label: { type: String },
+  modelValue: {},
+  type: { type: String, default: "text" },
+});
+
+const $emit = defineEmits(["update:modelValue"]);
+
+const onChange = (e: any) => {
+  $emit("update:modelValue", e.target.value);
+};
+
+</script>
 
 <style scoped>
 .custom-input-ava {
@@ -23,6 +41,7 @@
   transition: border-color 0.25s ease-in-out;
   line-height: 1.2;
 }
+
 .custom-input-ava:focus {
   outline: 0;
   box-shadow: 0;
@@ -37,5 +56,4 @@
   transform: translateY(-50%);
   left: 12px;
 }
-
 </style>

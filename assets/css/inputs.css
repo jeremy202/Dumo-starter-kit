@@ -40,7 +40,7 @@
   /* color: transparent; */
   color: #b5b5b5;
   opacity: 0.35;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* Make the label and field look identical on every browser */
@@ -60,12 +60,6 @@
   position: relative;
   width: 100%;
 }
-
-/* .dumo-input-wrapper.image {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-} */
 
 .dumo-select-field,
 .dumo-input-field {

@@ -51,7 +51,6 @@ onMounted(() => {
 });
 </script>
 
-<style scoped src="../assets/css/inputs.css"></style>
 <style scoped>
 .dropdown-icon {
   position: absolute;

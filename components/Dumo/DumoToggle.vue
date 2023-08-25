@@ -7,14 +7,15 @@
 </template>
 
 <script setup lang="ts">
-// const props = defineProps(['modelValue']);
 const props = defineProps<{
   modelValue?: boolean
   sm?: boolean
+  blue?: boolean;
 }>();
 
 const classes = {
   ["toggle-small"]: props.sm,
+  ["toggle-blue"]: props.blue,
 };
 
 const emit = defineEmits(["update:checked"]);
@@ -82,6 +83,10 @@ const toggleCheckbox = (e: Event) => {
 
 input:checked+.slider {
   background-color: #24b57a;
+}
+
+.toggle-blue input:checked+.slider {
+  background-color: #5476D2;
 }
 
 input:checked+.slider:before {

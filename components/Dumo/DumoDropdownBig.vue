@@ -3,9 +3,9 @@
     <div class="flex items-center justify-between font-medium cursor-pointer dropdown-select text-x-small"
       @click="showDropdown = !showDropdown">
       <span class="flex items-center gap-2 capitalize">
-        <img v-if="modelValue && modelValue.image" :src="modelValue.image" alt="" />
-        <span v-if="modelValue">{{ modelValue.text }}</span>
-        <span v-if="!modelValue">{{ placeholder }}</span>
+        <img v-if="selected && selected.image" :src="selected.image" alt="" />
+        <span v-if="selected?.text">{{ selected.text }}</span>
+        <span v-if="!selected">{{ placeholder }}</span>
       </span>
       <span class="icon"><img class="cursor-pointer" src="/images/arrow-down.png" alt="" /></span>
     </div>
@@ -23,10 +23,16 @@
 </template>
 
 <script lang="ts" setup>
+type Item = {
+  text: string;
+  value: string;
+  image?: string;
+};
+
 const props = defineProps<{
-  modelValue: { text: string; value: any, image?: string };
+  modelValue?: any;
   placeholder?: string;
-  items?: { text: string; value: any, image?: string }[];
+  items?: Item[];
   width?: string;
   background?: string;
   color?: string;
@@ -36,7 +42,7 @@ const props = defineProps<{
 const $emit = defineEmits(["update:modelValue"]);
 
 const showDropdown = ref(false);
-// const selected = ref<{ text: string; value?: string; image?: string }>();
+const selected = ref<Item>();
 
 const close = () => {
   showDropdown.value = false
@@ -49,10 +55,10 @@ const styles = {
   ...(props.border && { border: props.border }),
 };
 
-const selectItem = (item: any) => {
-  // selected.value = item;
+const selectItem = (item: Item) => {
+  selected.value = item;
   showDropdown.value = false;
-  $emit("update:modelValue", item);
+  $emit("update:modelValue", item.value);
 };
 </script>
 

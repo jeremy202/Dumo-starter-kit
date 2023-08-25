@@ -51,18 +51,15 @@ const styles = {
   cursor: pointer;
   position: relative;
 }
-
 .button-secondary {
   color: var(--primary);
   background-color: #dce0ee;
 }
-
 .button-alt {
   background-color: #e9ecf7;
   border-radius: 10px;
   color: var(--main-blue);
 }
-
 .button-cta::after {
   content: '';
   position: absolute;
@@ -77,21 +74,17 @@ const styles = {
   transition: all 0.5s ease-in-out;
   z-index: -1;
 }
-
 .button-cta:hover::after {
   transform: skewY(3deg);
 }
-
 .button-small {
   border-radius: 10px;
   font-size: 13px;
   padding: 11px 16px;
 }
-
 .button-large {
   padding: 18px 32px;
 }
-
 .button-xs {
   font-size: 13px;
   padding: 8px 14px;
@@ -100,7 +93,6 @@ const styles = {
   justify-content: center;
   align-items: center;
 }
-
 .button[disabled] {
   background-color: #bcbcbc;
   color: #4a4a4a;

@@ -228,7 +228,6 @@ h6 {
   z-index: 1;
   overflow-y: auto;
   height: 100vh;
-
 }
 
 .modal-left {
@@ -254,54 +253,6 @@ h6 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-
-/* Table Style */
-table {
-  width: 100%;
-  overflow: hidden;
-}
-
-th {
-  height: 55px;
-  background: #f7f8f9;
-  opacity: 1;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-left: 8px;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 600;
-  color: #262626;
-  text-align: left;
-  letter-spacing: 1px;
-}
-
-td {
-  font-weight: 500;
-  color: #4a4a4a;
-  padding-bottom: 19px;
-  padding-top: 19px;
-  padding-left: 8px;
-}
-
-tr:hover {
-  background-color: #f3f3f3;
-}
-
-tr {
-  border-bottom: 1px solid #e8e2e8;
-}
-
-.demo-image-wrapper {
-  /* margin-left: auto; */
-  margin-right: auto;
-  width: 178px;
-  height: 189px;
-  background: #f7f8f9 0% 0% no-repeat padding-box;
-  border-radius: 24px;
-  position: relative;
 }
 
 /* Vue tel input */

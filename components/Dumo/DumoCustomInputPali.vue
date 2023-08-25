@@ -4,10 +4,28 @@
       <div class="custom-label-pali">
         .pali.page
       </div>
-      <input class="custom-input-pali" placeholder="Your Store Link" />
+      <input class="custom-input-pali" :type="type" placeholder="Your Store Link" :value="props.modelValue"
+        @input="onChange" v-bind="$attrs" />
     </div>
   </div>
 </template>
+
+
+<script setup lang="ts">
+const props = defineProps({
+  placeholder: { type: String },
+  label: { type: String },
+  modelValue: {},
+  type: { type: String, default: "text" },
+});
+
+const $emit = defineEmits(["update:modelValue"]);
+
+const onChange = (e: any) => {
+  $emit("update:modelValue", e.target.value);
+};
+
+</script>
 
 <style scoped>
 .custom-input-pali {
@@ -23,6 +41,7 @@
   transition: border-color 0.25s ease-in-out;
   line-height: 1.2;
 }
+
 .custom-input-pali:focus {
   outline: 0;
   box-shadow: 0;
@@ -37,5 +56,4 @@
   transform: translateY(-50%);
   right: 12px;
 }
-
 </style>
