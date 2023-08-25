@@ -10,11 +10,15 @@
       </DumoButton>
     </div>
 
-    <!-- <div class="flex flex-col justify-center ml-[40vw]">
+    <div class="flex flex-col justify-center ml-[40vw]">
       <div class="max-w-xs mt-5">
         <DumoDropdownBig placeholder="- Select Organization -" :items="organizations" v-model="organization" />
       </div>
-    </div> -->
+      <div class="max-w-xs mt-5">
+        <dumo-input type="text" required autocomplete="on" v-model="form.country" name="country"
+          :prepend="form.country ? 'Your First Name' : ''" :label="form.country ? '' : 'First Name'"></dumo-input>
+      </div>
+    </div>
   </div>
 </template>
 
