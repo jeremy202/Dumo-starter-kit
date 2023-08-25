@@ -49,6 +49,7 @@ const togglePassword = () => {
 };
 </script>
 
+<style scoped src="~~/assets/css/inputs.css"></style>
 <style scoped>
 .icon {
   position: absolute;
