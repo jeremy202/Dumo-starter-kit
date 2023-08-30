@@ -15,6 +15,10 @@
         <DumoDropdown placeholder="- Select Organization -" :items="organizations" v-model="organization" />
       </div>
       <div class="max-w-xs mt-5">
+        <dumo-input type="email" autocomplete="on" v-model="form.email" name="email"
+          :prepend="form.email ? 'Email Address' : ''" :label="form.email ? '' : 'Email Address'"></dumo-input>
+      </div>
+      <div class="max-w-xs mt-5">
         <DumoImageDropdown :items="languages" width="100%" background='none' placeholder="" color="#fff"
           :modelValue="language" @update:modelValue="setLanguage"></DumoImageDropdown>
       </div>

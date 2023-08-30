@@ -36,7 +36,6 @@ const onChange = (e: any) => {
 .custom-input::placeholder{
   text-transform: capitalize;
 }
-
 .icon {
   position: absolute;
   height: 16px;
