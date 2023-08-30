@@ -1,7 +1,7 @@
 <template>
   <NuxtLink :to="route" class="button-link" :class="classes" :style="styles" v-bind="$attrs">
     <slot></slot>
-    <img v-show="image" :src="image" alt="Image" />
+    <img v-if="image" :src="image" alt="Image" />
   </NuxtLink>
 </template>
 
