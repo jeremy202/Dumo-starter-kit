@@ -11,11 +11,11 @@
     </span>
     <div v-if="props.prepend" class="prepend" :class="{ success: success }">{{ prepend }}</div>
     <div v-if="props.type === 'password'" @click="togglePassword">
-      <img class="cursor-pointer icon" v-if="hidePassword" src="~~/assets/images/unhide.svg" alt="" />
-      <img class="cursor-pointer icon" v-else src="~~/assets/images/hide.svg" alt="" />
+      <img class="cursor-pointer icon" v-if="hidePassword" src="~/assets/images/unhide.svg" alt="" />
+      <img class="cursor-pointer icon" v-else src="~/assets/images/hide.svg" alt="" />
     </div>
     <div v-if="props.success">
-      <img class="cursor-pointer icon" src="~~/assets/images/ic-verified.svg" alt="" />
+      <img class="cursor-pointer icon" src="~/assets/images/ic-verified.svg" alt="" />
     </div>
   </div>
 </template>
@@ -48,8 +48,6 @@ const togglePassword = () => {
   hidePassword.value = !hidePassword.value;
 };
 </script>
-
-<!-- <style scoped src="@/assets/css/inputs.css"></style> -->
 
 <style scoped>
 .icon {
