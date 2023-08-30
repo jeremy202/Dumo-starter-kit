@@ -12,11 +12,11 @@
 
     <div class="flex flex-col justify-center ml-[40vw]">
       <div class="max-w-xs mt-5">
-        <DumoDropdownBig placeholder="- Select Organization -" :items="organizations" v-model="organization" />
+        <DumoDropdown placeholder="- Select Organization -" :items="organizations" v-model="organization" />
       </div>
       <div class="max-w-xs mt-5">
-        <dumo-input type="text" required autocomplete="on" v-model="form.country" name="country"
-          :prepend="form.country ? 'Your First Name' : ''" :label="form.country ? '' : 'First Name'"></dumo-input>
+        <DumoImageDropdown :items="languages" width="100%" background='none' placeholder="" color="#fff"
+          :modelValue="language" @update:modelValue="setLanguage"></DumoImageDropdown>
       </div>
     </div>
   </div>
@@ -28,6 +28,35 @@ const form = reactive({
   password: "",
   country: ""
 });
+
+const languages = [
+  {
+    text: 'English',
+    value: 'en-US',
+    image: '/images/english-flag.png',
+  },
+  {
+    text: 'English1',
+    value: 'en-US',
+    image: '/images/english-flag.png',
+  },
+  {
+    text: 'English2',
+    value: 'en-US',
+    image: '/images/english-flag.png',
+  },
+  {
+    text: 'English3',
+    value: 'en-US',
+    image: '/images/english-flag.png',
+  },
+]
+
+const language = ref<{ text: string; value: string; image?: string }>(languages[0]);
+
+const setLanguage = (item: { text: string; value: string; image?: string }) => {
+  language.value = item
+}
 
 const organizations = [
   {

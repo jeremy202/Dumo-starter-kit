@@ -3,16 +3,16 @@
     <div class="flex items-center justify-between font-medium cursor-pointer dropdown-select text-x-small"
       @click="showDropdown = !showDropdown">
       <span class="flex items-center gap-2 capitalize">
-        <img v-if="selected && selected.image" :src="selected.image" alt="" />
-        <span v-if="selected?.text">{{ selected.text }}</span>
-        <span v-if="!selected">{{ placeholder }}</span>
+        <img v-if="modelValue && modelValue.image" :src="modelValue.image" alt="" />
+        <span v-if="modelValue?.text">{{ modelValue.text }}</span>
+        <span v-if="!modelValue">{{ placeholder }}</span>
       </span>
       <span class="icon"><img class="cursor-pointer" src="/images/arrow-down.png" alt="" /></span>
     </div>
 
     <div v-click-outside="close" v-if="showDropdown" class="absolute dropdown-menu text-x-small">
-      <span v-for="(item, idx) in items" :key="idx"
-        class="flex items-center gap-2 capitalize cursor-pointer drop-content-padding" @click="selectItem(item)">
+      <span v-for="(item, idx) in items" :key="idx" class="flex items-center gap-2 capitalize cursor-pointer"
+        @click="selectItem(item)">
         <span v-if="item.image">
           <img :src="item.image" alt="" />
         </span>
@@ -58,15 +58,15 @@ const styles = {
 const selectItem = (item: Item) => {
   selected.value = item;
   showDropdown.value = false;
-  $emit("update:modelValue", item.value);
+  $emit("update:modelValue", item);
 };
 </script>
 
 <style scoped>
 .dropdown-select {
   width: 100%;
-  border-radius: 14px;
-  padding: 14px 16px;
+  border-radius: 10px;
+  padding: 6px 10px;
   border: 2px solid #E7EAF4;
   color: #4B4B4D;
   background-color: #FCFCFC;
@@ -74,18 +74,12 @@ const selectItem = (item: Item) => {
 
 .dropdown-menu {
   width: 100%;
-  margin-top: 4px;
-  padding: 10px 0;
-  border-radius: 4px 4px 14px 14px;
+  border-radius: 10px;
+  padding: 6px;
   border: 2px solid #E7EAF4;
   color: #4B4B4D;
-  background-color: #EBEBEB;
-  position: absolute;
-  z-index: 2;
-}
-
-.drop-content-padding {
-  padding: 10px 16px;
+  background-color: #FCFCFC;
+  z-index: 1;
 }
 
 .icon {
