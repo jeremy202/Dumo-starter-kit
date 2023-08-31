@@ -61,33 +61,33 @@ h4,
 h5,
 h6 {
   font-family: 'roc-grotesk', sans-serif;
-  font-weight: var(--roc-grotesk-bold);
+  font-weight: var(--roc-grotesk-bold) !important;
   color: var(--dark);
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 32px !important;
 }
 h2 {
-  font-size: 24px;
+  font-size: 24px !important;
 }
 h3 {
-  font-size: 18px;
+  font-size: 18px !important;
 }
 h4 {
-  font-size: 16px;
+  font-size: 16px !important;
 }
 h5 {
-  font-size: 14px;
+  font-size: 14px !important;
 }
 h6 {
-  font-size: 12px;
+  font-size: 12px !important;
 }
 
 /* sub header */
 .sub-header {
   font-family: 'roc-grotesk', sans-serif;
-  font-weight: var(--roc-grotesk-medium);
+  font-weight: var(--roc-grotesk-medium) !important;
   font-size: 14px;
   letter-spacing: 1.12px;
   color: var(--dark);
@@ -96,14 +96,14 @@ h6 {
 /* small subheader */
 .sub-header-small {
   font-family: 'roc-grotesk', sans-serif;
-  font-weight: var(--roc-grotesk-medium);
+  font-weight: var(--roc-grotesk-medium) !important;
   letter-spacing: 0.96px;
   font-size: 12px;
   color: var(--dark);
 }
 .sub-header-x-small {
   font-family: 'roc-grotesk', sans-serif;
-  font-weight: var(--roc-grotesk-medium);
+  font-weight: var(--roc-grotesk-medium) !important;
   letter-spacing: 0.96px;
   color: var(--dark);
   font-size: 10px;
@@ -111,14 +111,14 @@ h6 {
 
 .title {
   font-family: 'roc-grotesk', sans-serif;
-  font-weight: var(--roc-grotesk-bold);
+  font-weight: var(--roc-grotesk-bold) !important;
   font-size: 40px;
   color: var(--dark);
 }
 
 .big-title {
   font-family: 'roc-grotesk', sans-serif;
-  font-weight: var(--roc-grotesk-bold);
+  font-weight: var(--roc-grotesk-bold) !important;
   font-size: 64px;
   color: var(--dark);
 }
@@ -126,54 +126,54 @@ h6 {
 /* Font sizes */
 .big-paragraph {
   font-family: 'rustica', sans-serif;
-  font-weight: var(--rustica-semi-light);
+  font-weight: var(--rustica-semi-light) !important;
   font-size: 20px;
 }
 .mid-paragraph {
   font-family: 'rustica', sans-serif;
-  font-weight: var(--rustica-semi-light);
+  font-weight: var(--rustica-semi-light) !important;
   font-size: 18px;
 }
 .small-paragraph {
   font-family: 'rustica', sans-serif;
-  font-weight: var(--rustica-semi-light);
+  font-weight: var(--rustica-semi-light) !important;
   font-size: 14px;
 }
 .x-small-paragraph {
   font-family: 'rustica', sans-serif;
-  font-weight: var(--rustica-semi-light);
+  font-weight: var(--rustica-semi-light) !important;
   font-size: 12px;
 }
 .xx-small-paragraph {
   font-family: 'rustica', sans-serif;
-  font-weight: var(--rustica-semi-light);
+  font-weight: var(--rustica-semi-light) !important;
   font-size: 10px;
 }
 
 /* Font weights */
 .roc-grotesk-medium {
   font-family: 'roc-grotesk', sans-serif;
-  font-weight: var(--roc-grotesk-medium);
+  font-weight: var(--roc-grotesk-medium) !important;
 }
 .roc-grotesk-bold {
   font-family: 'roc-grotesk', sans-serif;
-  font-weight: var(--roc-grotesk-bold);
+  font-weight: var(--roc-grotesk-bold) !important;
 }
 .rustica-semi-light {
   font-family: 'rustica', sans-serif;
-  font-weight: var(--rustica-semi-light);
+  font-weight: var(--rustica-semi-light) !important;
 }
 .rustica-regular {
   font-family: 'rustica', sans-serif;
-  font-weight: var(--rustica-regular);
+  font-weight: var(--rustica-regular) !important;
 }
 .rustica-medium {
   font-family: 'rustica', sans-serif;
-  font-weight: var(--rustica-medium);
+  font-weight: var(--rustica-medium) !important;
 }
 .rustica-bold {
   font-family: 'rustica', sans-serif;
-  font-weight: var(--rustica-bold);
+  font-weight: var(--rustica-bold) !important;
 }
 
 /* utilities */
