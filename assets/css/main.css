@@ -1,5 +1,18 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin,padding
+*/
 * {
   margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 /*
   3. Allow percentage-based heights in the application
@@ -57,9 +70,4 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
-}
-
-* {
-  padding: 0;
-  scroll-behavior: smooth;
 }

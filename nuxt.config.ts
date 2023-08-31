@@ -22,7 +22,6 @@ export default defineNuxtConfig({
   css: [
     '~/assets/css/main.css',
     '~/assets/css/style.css',
-    // '~/assets/css/inputs.css',
   ],
   modules: [
     '@nuxtjs/tailwindcss',
