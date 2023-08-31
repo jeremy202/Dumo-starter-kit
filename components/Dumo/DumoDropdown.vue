@@ -1,5 +1,5 @@
 <template>
-  <div class="relative" :style="styles">
+  <div class="relative" :style="styles" ref="dropdownRef">
     <div class="flex items-center justify-between font-medium cursor-pointer dropdown-select text-x-small"
       @click="showDropdown = !showDropdown">
       <span class="flex items-center gap-2 capitalize">
@@ -10,7 +10,7 @@
       <span class="icon"><img class="cursor-pointer" src="/images/arrow-down.png" alt="" /></span>
     </div>
 
-    <div v-click-outside="close" v-if="showDropdown" class="absolute dropdown-menu text-x-small">
+    <div v-if="showDropdown" class="absolute dropdown-menu text-x-small">
       <span v-for="(item, idx) in items" :key="idx"
         class="flex items-center gap-2 capitalize cursor-pointer drop-content-padding" @click="selectItem(item)">
         <span v-if="item.image">
@@ -23,6 +23,8 @@
 </template>
 
 <script lang="ts" setup>
+import { onClickOutside } from '@vueuse/core'
+
 type Item = {
   text: string;
   value: string;
@@ -47,6 +49,10 @@ const selected = ref<Item>();
 const close = () => {
   showDropdown.value = false
 }
+
+const dropdownRef = ref(null)
+
+onClickOutside(dropdownRef, close)
 
 const styles = {
   ...(props.width && { width: props.width }),

@@ -44,16 +44,6 @@ const languages = [
     value: 'en-US',
     image: '/images/english-flag.png',
   },
-  {
-    text: 'English2',
-    value: 'en-US',
-    image: '/images/english-flag.png',
-  },
-  {
-    text: 'English3',
-    value: 'en-US',
-    image: '/images/english-flag.png',
-  },
 ]
 
 const language = ref<{ text: string; value: string; image?: string }>(languages[0]);

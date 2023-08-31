@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'dumo starter kit',
+      title: 'DUMO Kit',
       link: [
         { rel: 'stylesheet', href: 'https://use.typekit.net/nno1nqe.css' },
         {
@@ -19,13 +19,8 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: [
-    '~/assets/css/main.css',
-    '~/assets/css/style.css',
-  ],
-  modules: [
-    '@nuxtjs/tailwindcss',
-  ],
+  css: ['~/assets/css/main.css', '~/assets/css/style.css'],
+  modules: ['@vueuse/nuxt', '@nuxtjs/tailwindcss'],
   runtimeConfig: {
     public: {
       apiBaseUrl: process.env.API_BASE_URL || '',
