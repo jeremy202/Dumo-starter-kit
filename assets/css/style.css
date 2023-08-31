@@ -44,7 +44,7 @@ body {
   font-size: 16px;
   letter-spacing: 0px;
   color: var(--dark-gray-50);
-  font-weight: var(--rustica-semi-light);
+  font-weight: var(--rustica-semi-light) !important;
   overflow-x: hidden;
 }
 
