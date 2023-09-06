@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onClickOutside } from '@vueuse/core'
+// import { onClickOutside } from '@vueuse/core'
 
 type Item = {
   text: string;
