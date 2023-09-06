@@ -80,6 +80,9 @@ const selectItem = (item: Item) => {
 
 .dropdown-menu {
   width: 100%;
+  height: auto;
+  max-height: 300px;
+  overflow-y: auto;
   margin-top: 4px;
   padding: 10px 0;
   border-radius: 4px 4px 14px 14px;

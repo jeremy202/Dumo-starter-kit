@@ -80,6 +80,8 @@ const selectItem = (item: Item) => {
 
 .dropdown-menu {
   width: 100%;
+  height: auto;
+  max-height: 300px;
   border-radius: 10px;
   padding: 6px;
   border: 2px solid #E7EAF4;
