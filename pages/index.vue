@@ -19,6 +19,9 @@
           :prepend="form.email ? 'Email Address' : ''" :label="form.email ? '' : 'Email Address'"></dumo-input>
       </div>
       <div class="max-w-xs mt-5">
+        <dumo-currency-dropdown type="email" autocomplete="on" :items="currency"></dumo-currency-dropdown>
+      </div>
+      <div class="max-w-xs mt-5">
         <DumoImageDropdown :items="languages" width="100%" background='none' placeholder="" color="#fff"
           :modelValue="language" @update:modelValue="setLanguage"></DumoImageDropdown>
       </div>
@@ -60,9 +63,21 @@ const organizations = [
   {
     text: 'DUMO Ava',
     value: 'ava'
-  }]
+  }
+]
+const currency = [
+  {
+    text: 'usd',
+    value: 'usd'
+  },
+  {
+    text: 'ngn',
+    value: 'ngn'
+  }
+]
 
 const organization = ref('')
+const currencies = ref('usd')
 </script>
 
 <style scoped></style>
