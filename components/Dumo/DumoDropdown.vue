@@ -3,8 +3,7 @@
     <div class="flex items-center justify-between font-medium cursor-pointer dropdown-select text-x-small"
       @click="showDropdown = !showDropdown">
       <span class="flex items-center gap-2 capitalize">
-        <img v-if="selected && selected.image" :src="selected.image" alt="" />
-        <span v-if="selected?.text">{{ selected.text }}</span>
+        <span v-if="selected">{{ selected }}</span>
         <span v-if="!selected">{{ placeholder }}</span>
       </span>
       <span class="icon"><img class="cursor-pointer" src="/images/arrow-down.png" alt="" /></span>
@@ -13,9 +12,6 @@
     <div v-if="showDropdown" class="absolute dropdown-menu text-x-small">
       <span v-for="(item, idx) in items" :key="idx"
         class="flex items-center gap-2 capitalize cursor-pointer drop-content-padding" @click="selectItem(item)">
-        <span v-if="item.image">
-          <img :src="item.image" alt="" />
-        </span>
         {{ item.text }}
       </span>
     </div>
@@ -28,7 +24,6 @@ import { onClickOutside } from '@vueuse/core'
 type Item = {
   text: string;
   value: string;
-  image?: string;
 };
 
 const props = defineProps<{
@@ -44,7 +39,7 @@ const props = defineProps<{
 const $emit = defineEmits(["update:modelValue"]);
 
 const showDropdown = ref(false);
-const selected = ref<Item>();
+const selected = ref(props.modelValue);
 
 const close = () => {
   showDropdown.value = false
@@ -62,7 +57,7 @@ const styles = {
 };
 
 const selectItem = (item: Item) => {
-  selected.value = item;
+  selected.value = item.value;
   showDropdown.value = false;
   $emit("update:modelValue", item.value);
 };

@@ -19,7 +19,8 @@
           :prepend="form.email ? 'Email Address' : ''" :label="form.email ? '' : 'Email Address'"></dumo-input>
       </div>
       <div class="max-w-xs mt-5">
-        <dumo-currency-dropdown type="email" autocomplete="on" :items="currency"></dumo-currency-dropdown>
+        <dumo-currency-dropdown :items="currencies" v-model="currency"
+          @update:modelValue="setPrice"></dumo-currency-dropdown>
       </div>
       <div class="max-w-xs mt-5">
         <DumoImageDropdown :items="languages" width="100%" background='none' placeholder="" color="#fff"
@@ -55,6 +56,7 @@ const setLanguage = (item: { text: string; value: string; image?: string }) => {
   language.value = item
 }
 
+const organization = ref('')
 const organizations = [
   {
     text: 'Chigisoft',
@@ -65,19 +67,27 @@ const organizations = [
     value: 'ava'
   }
 ]
-const currency = [
+
+const currencies = [
   {
     text: 'usd',
-    value: 'usd'
+    amount: ''
   },
   {
     text: 'ngn',
-    value: 'ngn'
+    amount: ''
   }
 ]
+const currency = ref<{
+  text: string;
+  amount: string | number;
+}>(currencies[0])
 
-const organization = ref('')
-const currencies = ref('usd')
+const setPrice = (item: { text: string; amount: string | number }) => {
+  currency.value = item
+}
+
+
 </script>
 
 <style scoped></style>

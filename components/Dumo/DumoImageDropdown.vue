@@ -3,9 +3,9 @@
     <div class="flex items-center justify-between font-medium cursor-pointer dropdown-select text-x-small"
       @click="showDropdown = !showDropdown">
       <span class="flex items-center gap-2 capitalize">
-        <img v-if="modelValue && modelValue.image" :src="modelValue.image" alt="" />
-        <span v-if="modelValue?.text">{{ modelValue.text }}</span>
-        <span v-if="!modelValue">{{ placeholder }}</span>
+        <img v-if="selected && selected.image" :src="selected.image" alt="" />
+        <span v-if="selected?.text">{{ selected.text }}</span>
+        <span v-if="!selected">{{ placeholder }}</span>
       </span>
       <span class="icon"><img class="cursor-pointer" src="/images/arrow-down.png" alt="" /></span>
     </div>
@@ -44,7 +44,7 @@ const props = defineProps<{
 const $emit = defineEmits(["update:modelValue"]);
 
 const showDropdown = ref(false);
-const selected = ref<Item>();
+const selected = ref<Item>(props.modelValue);
 
 const close = () => {
   showDropdown.value = false
