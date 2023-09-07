@@ -1,3 +1,10 @@
+/* DEFAULT RESETS */
+@import url('./main.css');
+
+/* INPUTS STYLES */
+@import url('./inputs.css');
+
+/* BASE STYLES */
 :root {
   /* Primary Colors */
   --primary: #1a308f;
@@ -92,7 +99,6 @@ h6 {
   letter-spacing: 1.12px;
   color: var(--dark);
 }
-
 /* small subheader */
 .sub-header-small {
   font-family: 'roc-grotesk', sans-serif;
@@ -213,7 +219,7 @@ h6 {
   padding: 42px 39px;
   overflow-y: auto;
 
-  @media (max-width:768px) {
+  @media (max-width: 768px) {
     width: 100%;
     top: 20%;
     border-radius: 24px 24px 0px 0px;
@@ -266,167 +272,4 @@ h6 {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   border-color: none !important;
-}
-
-
-/* InPuts */
-.dumo-input-label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  user-select: none;
-}
-
-.default-input-label {
-  font-size: 12px;
-  letter-spacing: 0px;
-  color: #4b4b4d;
-}
-
-.dumo-select-field,
-.dumo-input-field {
-  color: rgba(44, 62, 80, 0.75);
-  border-width: 0;
-  z-index: 1;
-}
-
-.dumo-select-field {
-  appearance: none;
-}
-
-.dumo-text-area {
-  height: 100px;
-
-  @media (max-width: 768px) {
-    height: 135px;
-  }
-}
-
-.dumo-select-field,
-.dumo-input-field:focus {
-  outline: 0;
-  box-shadow: 0;
-}
-
-.dumo-input-field::placeholder {
-  /* color: transparent; */
-  color: #b5b5b5;
-  opacity: 0.35;
-  font-size: 16px;
-}
-
-/* Make the label and field look identical on every browser */
-.dumo-input-label,
-.dumo-select-field,
-.dumo-input-field {
-  font-size: 16px;
-  line-height: 1.2;
-  display: block;
-  width: 100%;
-  color: #1e1f21;
-}
-
-.dumo-input-field,
-.dumo-select-field,
-.dumo-input-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-.dumo-select-field,
-.dumo-input-field {
-  border-radius: 14px;
-  padding: 14px 12px;
-  transition: border-color 0.25s ease-in-out;
-  border: 2px solid #e7eaf4;
-  background-color: transparent;
-}
-
-.dumo-select-field + .dumo-input-label,
-.dumo-input-field + .dumo-input-label {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  display: inline-block;
-  width: auto;
-  margin: 0;
-  padding: 0;
-  color: #b5b5b5;
-  transition: transform 0.25s, opacity 0.25s, padding 0.25s ease-in-out;
-}
-
-/* .dumo-input-field:focus + .dumo-input-label,
-.dumo-input-field:not(:placeholder-shown) + .dumo-input-label, */
-.dumo-input-field:focus + .dumo-input-label,
-.dumo-select-field:not([data-value='']) + .dumo-input-label {
-  z-index: 1;
-  padding: 0 1px;
-  transform: translate(-3px, -23px) scale(0.8);
-  color: #1e1f21;
-  background-color: white;
-}
-
-.dumo-select-field:focus,
-.dumo-input-field:focus {
-  border-color: #2a54c7;
-}
-
-.dumo-input-field:focus + .dumo-input-label,
-.dumo-select-field:focus + .dumo-input-label {
-  color: #1e1f21;
-}
-
-.dumo-input-field.error,
-.dumo-select-field.error {
-  border-color: #c33434 !important;
-  /* color: #c33434 !important; */
-}
-
-.dumo-input-field.error + .dumo-input-label,
-.dumo-select-field.error + .dumo-input-label {
-  color: #c33434 !important;
-}
-
-.dumo-input-field.success,
-.dumo-select-field.success {
-  border-color: #3daa7e !important;
-  /* color: #3daa7e !important; */
-}
-
-.dumo-input-field.success + .dumo-input-label,
-.dumo-select-field.success + .dumo-input-label {
-  color: #3daa7e !important;
-}
-
-.dumo-input-field:-webkit-autofill,
-.dumo-input-field:-webkit-autofill:hover,
-.dumo-input-field:-webkit-autofill:focus {
-  box-shadow: 0 0 0px 1000px #ffffff inset !important;
-  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
-}
-
-.dumo-input-field[disabled] {
-  background: #eee;
-  opacity: 0.5;
-}
-
-.dumo-input-field[disabled].success {
-  background: #f2faf7;
-  opacity: 1;
-}
-
-.prepend {
-  position: absolute;
-  left: 8px;
-  top: -21px;
-  margin: 12px 10px;
-  font-size: 12px;
-  z-index: 1;
-  color: #1e1f21;
-  padding: 0 1px;
-  background-color: #ffffff;
-}
-
-.prepend.success {
-  color: #3daa7e;
 }

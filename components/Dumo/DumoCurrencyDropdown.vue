@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="dumo-currency-drop-container flex">
+    <div class="flex dumo-currency-drop-container">
       <div class="relative" :style="styles" ref="dropdownRef">
         <div class="flex items-center justify-between font-medium cursor-pointer dropdown-select-currency text-x-small"
           @click="showDropdown = !showDropdown">
-          <div class="flex items-center gap-2 capitalize">
+          <div class="flex items-center gap-2 uppercase">
             <span v-if="selected?.text">{{ selected.text }}</span>
             <span v-if="!selected">USD</span>
           </div>
@@ -15,7 +15,7 @@
     
         <div v-if="showDropdown" class="absolute dropdown-menu text-x-small">
           <span v-for="(item, idx) in items" :key="idx"
-            class="flex items-center gap-2 capitalize cursor-pointer drop-content-padding" @click="selectItem(item)">
+            class="flex items-center gap-2 uppercase cursor-pointer drop-content-padding" @click="selectItem(item)">
             <span v-if="item.image">
               <img :src="item.image" alt="" />
             </span>
@@ -23,7 +23,7 @@
           </span>
         </div>
       </div>
-      <input class="custom-input-pali" :type="type" placeholder="Placeholder" :value="props.modelValue"
+      <input class="custom-input" :type="type" placeholder="Placeholder" :value="props.modelValue"
         @input="onChange" v-bind="$attrs" />
     </div>
   </div>
@@ -84,7 +84,6 @@ const onChange = (e: any) => {
 </script>
 
 <style scoped>
-
 .dropdown-select-currency {
   padding: 10px 8px;
   background: #E7EAF4;
@@ -104,14 +103,14 @@ const onChange = (e: any) => {
   line-height: 1.2;
 }
 
-.custom-input-pali {
+.custom-input {
   background: transparent;
   padding: 10px;
 }
-.custom-input-pali:focus {
+.custom-input:focus {
   outline: 0;
   box-shadow: 0;
-  border-color: #F07D22;
+  /* border-color: #F07D22; */
   color: #1e1f21;
 }
 .icon {

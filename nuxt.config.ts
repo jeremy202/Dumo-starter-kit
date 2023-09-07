@@ -19,7 +19,7 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: ['~/assets/css/main.css', '~/assets/css/style.css'],
+  css: ['~/assets/css/style.css'],
   modules: ['@vueuse/nuxt', '@nuxtjs/tailwindcss'],
   runtimeConfig: {
     public: {
