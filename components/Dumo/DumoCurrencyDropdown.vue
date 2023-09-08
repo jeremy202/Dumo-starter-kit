@@ -5,7 +5,7 @@
         <div class="flex items-center justify-between font-medium cursor-pointer dropdown-select-currency text-x-small"
           @click="showDropdown = !showDropdown">
           <div class="flex items-center gap-2 uppercase">
-            <span v-if="selected">{{ selected.text }}</span>
+            <span v-if="selected">{{ selected.currency }}</span>
             <span v-if="!selected">USD</span>
           </div>
           <div class="icon">
@@ -16,7 +16,7 @@
         <div v-if="showDropdown" class="absolute dropdown-menu text-x-small">
           <span v-for="(item, idx) in items" :key="idx"
             class="flex items-center gap-2 uppercase cursor-pointer drop-content-padding" @click="selectItem(item)">
-            {{ item.text }}
+            {{ item.currency }}
           </span>
         </div>
       </div>
@@ -31,12 +31,12 @@
 import { onClickOutside } from '@vueuse/core'
 
 type Item = {
-  text: string;
+  currency: string;
   amount: string | number;
 };
 
 const props = defineProps<{
-  modelValue?: any;
+  modelValue: Item;
   placeholder?: string;
   items?: Item[];
   width?: string;

@@ -56,7 +56,6 @@ const setLanguage = (item: { text: string; value: string; image?: string }) => {
   language.value = item
 }
 
-const organization = ref('')
 const organizations = [
   {
     text: 'Chigisoft',
@@ -67,23 +66,24 @@ const organizations = [
     value: 'ava'
   }
 ]
+const organization = ref('')
 
 const currencies = [
   {
-    text: 'usd',
+    currency: 'usd',
     amount: ''
   },
   {
-    text: 'ngn',
+    currency: 'ngn',
     amount: ''
   }
 ]
 const currency = ref<{
-  text: string;
+  currency: string;
   amount: string | number;
-}>(currencies[0])
+}>(currencies[1])
 
-const setPrice = (item: { text: string; amount: string | number }) => {
+const setPrice = (item: { currency: string; amount: string | number }) => {
   currency.value = item
 }
 
