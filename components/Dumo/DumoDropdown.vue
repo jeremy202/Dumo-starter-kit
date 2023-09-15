@@ -4,7 +4,7 @@
       @click="showDropdown = !showDropdown">
       <span class="flex items-center gap-2 capitalize">
         <span v-if="selected">{{ selected }}</span>
-        <span v-if="!selected">{{ placeholder }}</span>
+        <span v-if="!modelValue">{{ placeholder }}</span>
       </span>
       <span class="icon"><img class="cursor-pointer" src="/images/arrow-down.png" alt="" /></span>
     </div>
