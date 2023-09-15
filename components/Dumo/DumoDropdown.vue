@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between font-medium cursor-pointer dropdown-select text-x-small"
       @click="showDropdown = !showDropdown">
       <span class="flex items-center gap-2 capitalize">
-        <span v-if="selected">{{ selected }}</span>
+        <span v-if="modelValue">{{ modelValue }}</span>
         <span v-if="!modelValue">{{ placeholder }}</span>
       </span>
       <span class="icon"><img class="cursor-pointer" src="/images/arrow-down.png" alt="" /></span>
@@ -39,7 +39,7 @@ const props = defineProps<{
 const $emit = defineEmits(["update:modelValue"]);
 
 const showDropdown = ref(false);
-const selected = ref(props.modelValue);
+// const selected = ref(props.modelValue);
 
 const close = () => {
   showDropdown.value = false
@@ -57,7 +57,7 @@ const styles = {
 };
 
 const selectItem = (item: Item) => {
-  selected.value = item.value;
+  // selected.value = item.value;
   showDropdown.value = false;
   $emit("update:modelValue", item.value);
 };
