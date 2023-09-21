@@ -80,10 +80,10 @@ const currencies = [
 ]
 const currency = ref<{
   currency: string;
-  amount: string | number;
+  amount: string;
 }>(currencies[1])
 
-const setPrice = (item: { currency: string; amount: string | number }) => {
+const setPrice = (item: { currency: string; amount: string }) => {
   currency.value = item
 }
 

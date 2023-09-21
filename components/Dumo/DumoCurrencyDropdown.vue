@@ -32,7 +32,7 @@ import { onClickOutside } from '@vueuse/core'
 
 type Item = {
   currency: string;
-  amount: string | number;
+  amount: string;
 };
 
 const props = defineProps<{
