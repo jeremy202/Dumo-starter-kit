@@ -158,3 +158,22 @@
 .prepend.success {
   color: #3daa7e;
 }
+
+/* sizes */
+.dumo-input-small {
+  font-size: 12px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.dumo-input-field.dumo-input-small::placeholder {
+  font-size: 13px;
+}
+
+.dumo-input-field.dumo-input-small + .dumo-input-label {
+  top: 10px;
+}
+
+.dumo-input-field:focus.dumo-input-small + .dumo-input-label {
+  transform: translate(-3px, -18px) scale(0.8);
+}

@@ -1,8 +1,8 @@
 <template>
   <div class="dumo-input-wrapper">
     <label v-if="defaultLabel" class="default-input-label">{{ props.label }}</label>
-    <input :type="computedType" class="dumo-input-field" :class="{ error: error, success: success }" placeholder=""
-      :value="props.modelValue" @input="onChange" v-bind="$attrs" />
+    <input :type="computedType" class="dumo-input-field" :class="{ error: error, success: success, 'dumo-input-small': sm }"
+      :style="styles" placeholder="" :value="props.modelValue" @input="onChange" v-bind="$attrs" />
     <label v-if="!defaultLabel" class="dumo-input-label">{{ props.label }}</label>
     <!-- <span class="dumo-floating-label">Your email address</span> -->
 
@@ -24,6 +24,8 @@
 const hidePassword = ref(true);
 
 const props = defineProps({
+  bg: { type: String },
+  sm: { type: Boolean, default: false },
   label: { type: String },
   error: { type: Boolean },
   success: { type: Boolean },
@@ -47,6 +49,10 @@ const computedType = computed(() => {
 const togglePassword = () => {
   hidePassword.value = !hidePassword.value;
 };
+
+const styles = {
+  ...(props.bg) && { backgroundColor: props.bg }
+}
 </script>
 
 <style scoped>

@@ -35,6 +35,7 @@ const styles = {
   ...(props.border && { border: props.border }),
   ...(props.width && { width: props.width })
 };
+
 </script>
 
 <style scoped>
