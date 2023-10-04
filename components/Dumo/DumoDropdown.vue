@@ -82,7 +82,7 @@ const selectItem = (item: Item) => {
 }
 
 .small-select {
-  padding: 10px;
+  padding: 8px 10px;
 }
 .dropdown-menu {
   width: 100%;
