@@ -1,6 +1,6 @@
 <template>
   <div class="relative" :style="styles" ref="dropdownRef">
-    <div class="flex items-center justify-between font-medium cursor-pointer dropdown-select text-x-small"
+    <div class="flex items-center justify-between font-medium cursor-pointer dropdown-select small-paragraph"
       @click="showDropdown = !showDropdown">
       <span class="flex items-center gap-2 capitalize">
         <img v-if="selected && selected.image" :src="selected.image" alt="" />
@@ -10,7 +10,7 @@
       <span class="icon"><img class="cursor-pointer" src="/images/arrow-down.png" alt="" /></span>
     </div>
 
-    <div v-if="showDropdown" class="absolute dropdown-menu text-x-small">
+    <div v-if="showDropdown" class="absolute dropdown-menu small-paragraph">
       <span v-for="(item, idx) in items" :key="idx" class="flex items-center gap-2 capitalize cursor-pointer"
         @click="selectItem(item)">
         <span v-if="item.image">

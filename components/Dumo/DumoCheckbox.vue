@@ -1,6 +1,6 @@
 <template>
   <label class="container">
-    <input v-bind="$attrs" type="checkbox" :checked="isChecked" @change="toggleCheckbox">
+    <input v-bind="$attrs" type="checkbox" v-model="isChecked" />
     <span class="checkmark"></span>
     <slot></slot>
   </label>
@@ -8,20 +8,10 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-  modelValue?: boolean
-}>();
+  modelValue: boolean
+}>()
 
-const emit = defineEmits(["update:checked"]);
-
-const isChecked = ref(props.modelValue);
-
-const toggleCheckbox = (e: Event) => {
-  if (e.target instanceof HTMLInputElement) {
-    const newValue = e.target.checked;
-    isChecked.value = newValue;
-    emit('update:checked', newValue);
-  }
-};
+const isChecked = ref(props.modelValue)
 </script>
 
 <style scoped>
@@ -53,29 +43,29 @@ const toggleCheckbox = (e: Event) => {
   width: 17px;
   height: 17px;
   border-radius: 3px;
-  background-color: #FFFFFF;
-  border: 1px solid #D4D4D5;
+  background-color: #ffffff;
+  border: 1px solid #d4d4d5;
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input~.checkmark {
-  background-color: #FFFFFF;
+.container:hover input ~ .checkmark {
+  background-color: #ffffff;
 }
 
 /* When the checkbox is checked, add a blue background */
-.container input:checked~.checkmark {
-  background-color: #24B57A;
+.container input:checked ~ .checkmark {
+  background-color: #24b57a;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-  content: "";
+  content: '';
   position: absolute;
   display: none;
 }
 
 /* Show the checkmark when checked */
-.container input:checked~.checkmark:after {
+.container input:checked ~ .checkmark:after {
   display: block;
 }
 

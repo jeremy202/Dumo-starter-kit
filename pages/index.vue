@@ -5,29 +5,52 @@
     </div>
 
     <div class="mx-auto mt-5">
-      <DumoButton cta>
-        DUMO
-      </DumoButton>
+      <DumoButton cta> DUMO </DumoButton>
     </div>
 
     <div class="flex flex-col justify-center ml-[40vw]">
       <div class="max-w-xs mt-5">
-        <DumoDropdown placeholder="- Select Organization -" :items="organizations" v-model="organization" />
+        <DumoDropdown sm
+          placeholder="- Select Organization -"
+          :items="organizations"
+          v-model="organization" />
       </div>
       <div class="max-w-xs mt-5">
-        <dumo-search-input sm v-model="form.email" name="email"></dumo-search-input>
+        <dumo-search-input
+          sm
+          v-model="form.email"
+          name="email"></dumo-search-input>
       </div>
       <div class="max-w-xs mt-5">
-        <dumo-input type="email" bg="white" autocomplete="on" v-model="form.email" name="email" placeholder='Email'
-          :prepend="form.email ? 'Email Address' : ''" :label="form.email ? '' : 'Email Address'"></dumo-input>
+        <dumo-input
+          type="email"
+          bg="white"
+          autocomplete="on"
+          v-model="form.email"
+          name="email"
+          placeholder="Email"
+          :prepend="form.email ? 'Email Address' : ''"
+          :label="form.email ? '' : 'Email Address'"></dumo-input>
       </div>
       <div class="max-w-xs mt-5">
-        <dumo-currency-dropdown :items="currencies" v-model="currency"
+        <dumo-currency-dropdown
+          :items="currencies"
+          v-model="currency"
           @update:modelValue="setPrice"></dumo-currency-dropdown>
       </div>
       <div class="max-w-xs mt-5">
-        <DumoImageDropdown :items="languages" width="100%" background='none' placeholder="" color="#fff"
-          :modelValue="language" @update:modelValue="setLanguage"></DumoImageDropdown>
+        <DumoImageDropdown
+          :items="languages"
+          width="100%"
+          background="none"
+          placeholder=""
+          color="#fff"
+          :modelValue="language"
+          @update:modelValue="setLanguage"></DumoImageDropdown>
+      </div>
+
+      <div class="max-w-xs mt-5">
+        <DumoCheckbox v-model="checked" />
       </div>
     </div>
   </div>
@@ -35,10 +58,12 @@
 
 <script setup lang="ts">
 const form = reactive({
-  email: "",
-  password: "",
-  country: ""
-});
+  email: '',
+  password: '',
+  country: '',
+})
+
+const checked = ref(true)
 
 const languages = [
   {
@@ -53,7 +78,9 @@ const languages = [
   },
 ]
 
-const language = ref<{ text: string; value: string; image?: string }>(languages[0]);
+const language = ref<{ text: string; value: string; image?: string }>(
+  languages[0]
+)
 
 const setLanguage = (item: { text: string; value: string; image?: string }) => {
   language.value = item
@@ -62,35 +89,33 @@ const setLanguage = (item: { text: string; value: string; image?: string }) => {
 const organizations = [
   {
     text: 'Chigisoft',
-    value: 'chigisoft'
+    value: 'chigisoft',
   },
   {
     text: 'DUMO Ava',
-    value: 'ava'
-  }
+    value: 'ava',
+  },
 ]
 const organization = ref('')
 
 const currencies = [
   {
     currency: 'usd',
-    amount: ''
+    amount: '',
   },
   {
     currency: 'ngn',
-    amount: ''
-  }
+    amount: '',
+  },
 ]
 const currency = ref<{
-  currency: string;
-  amount: string;
+  currency: string
+  amount: string
 }>(currencies[1])
 
 const setPrice = (item: { currency: string; amount: string }) => {
   currency.value = item
 }
-
-
 </script>
 
 <style scoped></style>

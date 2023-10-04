@@ -2,7 +2,7 @@
   <div>
     <div class="flex dumo-currency-drop-container">
       <div class="relative" :style="styles" ref="dropdownRef">
-        <div class="flex items-center justify-between font-medium cursor-pointer dropdown-select-currency text-x-small"
+        <div class="flex items-center justify-between font-medium cursor-pointer dropdown-select-currency small-paragraph"
           @click="showDropdown = !showDropdown">
           <div class="flex items-center gap-2 uppercase">
             <span v-if="selected">{{ selected.currency }}</span>
@@ -13,7 +13,7 @@
           </div>
         </div>
 
-        <div v-if="showDropdown" class="absolute dropdown-menu text-x-small">
+        <div v-if="showDropdown" class="absolute dropdown-menu small-paragraph">
           <span v-for="(item, idx) in items" :key="idx"
             class="flex items-center gap-2 uppercase cursor-pointer drop-content-padding" @click="selectItem(item)">
             {{ item.currency }}

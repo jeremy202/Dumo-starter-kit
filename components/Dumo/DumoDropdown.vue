@@ -1,17 +1,24 @@
 <template>
   <div class="relative" :style="styles" ref="dropdownRef">
-    <div class="flex items-center justify-between font-medium cursor-pointer dropdown-select text-x-small"
+    <div
+      class="flex items-center justify-between font-medium cursor-pointer dropdown-select small-paragraph"
+      :class="{ 'small-select': sm }"
       @click="showDropdown = !showDropdown">
       <span class="flex items-center gap-2 capitalize">
         <span v-if="modelValue">{{ modelValue }}</span>
         <span v-if="!modelValue">{{ placeholder }}</span>
       </span>
-      <span class="icon"><img class="cursor-pointer" src="/images/arrow-down.png" alt="" /></span>
+      <span class="icon"
+        ><img class="cursor-pointer" src="/images/arrow-down.png" alt=""
+      /></span>
     </div>
 
-    <div v-if="showDropdown" class="absolute dropdown-menu text-x-small">
-      <span v-for="(item, idx) in items" :key="idx"
-        class="flex items-center gap-2 capitalize cursor-pointer drop-content-padding" @click="selectItem(item)">
+    <div v-if="showDropdown" class="absolute dropdown-menu small-paragraph">
+      <span
+        v-for="(item, idx) in items"
+        :key="idx"
+        class="flex items-center gap-2 capitalize cursor-pointer drop-content-padding"
+        @click="selectItem(item)">
         {{ item.text }}
       </span>
     </div>
@@ -22,23 +29,24 @@
 import { onClickOutside } from '@vueuse/core'
 
 type Item = {
-  text: string;
-  value: string;
-};
+  text: string
+  value: string
+}
 
 const props = defineProps<{
-  modelValue?: any;
-  placeholder?: string;
-  items?: Item[];
-  width?: string;
-  background?: string;
-  color?: string;
-  border?: string;
-}>();
+  modelValue?: any
+  placeholder?: string
+  items?: Item[]
+  width?: string
+  background?: string
+  color?: string
+  border?: string
+  sm?: boolean
+}>()
 
-const $emit = defineEmits(["update:modelValue"]);
+const $emit = defineEmits(['update:modelValue'])
 
-const showDropdown = ref(false);
+const showDropdown = ref(false)
 // const selected = ref(props.modelValue);
 
 const close = () => {
@@ -54,13 +62,13 @@ const styles = {
   ...(props.background && { background: props.background }),
   ...(props.color && { color: props.color }),
   ...(props.border && { border: props.border }),
-};
+}
 
 const selectItem = (item: Item) => {
   // selected.value = item.value;
-  showDropdown.value = false;
-  $emit("update:modelValue", item.value);
-};
+  showDropdown.value = false
+  $emit('update:modelValue', item.value)
+}
 </script>
 
 <style scoped>
@@ -68,11 +76,14 @@ const selectItem = (item: Item) => {
   width: 100%;
   border-radius: 14px;
   padding: 14px 16px;
-  border: 2px solid #E7EAF4;
-  color: #4B4B4D;
-  background-color: #FCFCFC;
+  border: 2px solid #e7eaf4;
+  color: #4b4b4d;
+  background-color: #fcfcfc;
 }
 
+.small-select {
+  padding: 10px;
+}
 .dropdown-menu {
   width: 100%;
   height: auto;
@@ -81,9 +92,9 @@ const selectItem = (item: Item) => {
   margin-top: 4px;
   padding: 10px 0;
   border-radius: 4px 4px 14px 14px;
-  border: 2px solid #E7EAF4;
-  color: #4B4B4D;
-  background-color: #EBEBEB;
+  border: 2px solid #e7eaf4;
+  color: #4b4b4d;
+  background-color: #ebebeb;
   position: absolute;
   z-index: 2;
 }
