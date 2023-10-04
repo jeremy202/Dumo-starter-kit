@@ -10,7 +10,8 @@
 
     <div class="flex flex-col justify-center ml-[40vw]">
       <div class="max-w-xs mt-5">
-        <DumoDropdown sm
+        <DumoDropdown
+          sm
           placeholder="- Select Organization -"
           :items="organizations"
           v-model="organization" />
