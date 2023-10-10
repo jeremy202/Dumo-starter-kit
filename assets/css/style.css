@@ -128,6 +128,13 @@ h6 {
   font-size: 64px;
   color: var(--dark);
 }
+.big-title-web {
+  font-family: 'roc-grotesk', sans-serif;
+  font-weight: var(--roc-grotesk-bold) !important;
+  font-size: 64px;
+  line-height: 1.2;
+  color: var(--dark);
+}
 
 /* Font sizes */
 .big-paragraph {
