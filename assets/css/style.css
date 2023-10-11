@@ -121,6 +121,12 @@ h6 {
   font-size: 40px;
   color: var(--dark);
 }
+.title-web {
+  font-family: "elza", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: var(--dark);
+}
 
 .big-title {
   font-family: 'roc-grotesk', sans-serif;
@@ -130,8 +136,8 @@ h6 {
 }
 
 .big-title-web {
-  font-family: 'roc-grotesk', sans-serif;
-  font-weight: var(--roc-grotesk-bold) !important;
+  font-family: "elza", sans-serif;
+  font-weight: 700;
   font-size: 64px;
   line-height: 1.2;
   color: var(--dark);
@@ -189,6 +195,27 @@ h6 {
   font-family: 'rustica', sans-serif;
   font-weight: var(--rustica-bold) !important;
 }
+.elza-medium {
+  font-family: "elza", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.elza-medium-oblique {
+  font-family: "elza", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+.elza-bold {
+  font-family: "elza", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.elza-bold-oblique {
+  font-family: "elza", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
 
 /* utilities */
 .card-title {
