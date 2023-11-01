@@ -6,7 +6,7 @@
     :style="styles"
     v-bind="$attrs">
     <slot></slot>
-    <img v-if="image" :src="image" alt="Image" />
+    <img v-if="image" :src="image" alt="Image" class="arrow-img" />
   </NuxtLink>
 </template>
 
@@ -43,5 +43,9 @@ const classes = {
 
 .button-link.success {
   color: var(--primary-green);
+}
+.arrow-img {
+  height: 14px;
+  width: auto;
 }
 </style>
