@@ -38,7 +38,7 @@ const classes = {
   align-items: center;
   gap: 8px;
   text-decoration: underline;
-  text-transform: capitalize;
+  text-transform: math-auto;
 }
 
 .button-link.success {
