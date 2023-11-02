@@ -39,6 +39,7 @@ const classes = {
   gap: 8px;
   text-decoration: underline;
   text-transform: math-auto;
+  transition: 0.4s ease-in-out;
 }
 
 .button-link.success {
@@ -47,5 +48,10 @@ const classes = {
 .arrow-img {
   height: 14px;
   width: auto;
+  transition: 0.4s ease-in-out;
+}
+.button-link:hover > .arrow-img {
+  margin-left: 5px;
+  transition: 0.4s ease-in-out;
 }
 </style>
