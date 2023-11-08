@@ -50,6 +50,15 @@
           @update:modelValue="setLanguage"></DumoImageDropdown>
       </div>
 
+      <DumoButtonLinkTwo
+        color="#1E1F21"
+        route="/"
+        image="/images/ic-right-arrow.svg"
+      >
+        Contact sales
+      </DumoButtonLinkTwo>
+
+
       <div class="max-w-xs mt-5">
         <DumoCheckbox v-model="checked" />
       </div>
