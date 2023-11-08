@@ -4,7 +4,9 @@
       class="flex items-center justify-between font-medium cursor-pointer dropdown-select small-paragraph"
       :class="{ 'small-select': sm }"
       @click="showDropdown = !showDropdown">
-      <span class="flex items-center gap-2 capitalize">
+      <span
+        class="flex items-center gap-2"
+        :class="[uppercase ? 'uppercase' : 'capitalize']">
         <span v-if="modelValue">{{ modelValue }}</span>
         <span v-if="!modelValue">{{ placeholder }}</span>
       </span>
@@ -42,6 +44,7 @@ const props = defineProps<{
   color?: string
   border?: string
   sm?: boolean
+  uppercase?: boolean
 }>()
 
 const $emit = defineEmits(['update:modelValue'])
