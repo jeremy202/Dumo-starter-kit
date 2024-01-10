@@ -41,6 +41,6 @@ const classes = {
 }
 
 .button-link.success {
-  color: var(--primary-green);
+  color: #3DAA7E;
 }
 </style>
