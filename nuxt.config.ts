@@ -8,6 +8,7 @@ export default defineNuxtConfig({
       title: 'DUMO Kit',
       link: [
         { rel: 'stylesheet', href: 'https://use.typekit.net/nno1nqe.css' },
+        { rel: 'stylesheet', href: 'https://use.typekit.net/lsk7sna.css' },
         {
           rel: 'icon',
           type: 'image/x-icon',
