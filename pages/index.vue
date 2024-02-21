@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col justify-center">
-    <div class="mx-auto text-2xl font-extrabold">
+    <div class="mx-auto">
       <h1>DUMO PROJECT STARTER TEMPLATE</h1>
     </div>
 

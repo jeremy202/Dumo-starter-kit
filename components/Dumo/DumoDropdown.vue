@@ -13,6 +13,10 @@
       <span class="icon"
         ><img class="cursor-pointer" src="/images/arrow-down.png" alt=""
       /></span>
+
+      <div v-if="modelValue" class="placeholder-label">
+        {{ placeholder }}
+      </div>
     </div>
 
     <div v-if="showDropdown" class="absolute dropdown-menu small-paragraph">
@@ -101,6 +105,18 @@ const selectItem = (item: Item) => {
   padding: 14px 16px;
   border: 2px solid #e7eaf4;
   color: #4b4b4d;
+  background-color: #fcfcfc;
+}
+
+.placeholder-label {
+  position: absolute;
+  left: 8px;
+  top: -21px;
+  margin: 12px 10px;
+  font-size: 12px;
+  z-index: 1;
+  color: #1e1f21;
+  padding: 0 1px;
   background-color: #fcfcfc;
 }
 
