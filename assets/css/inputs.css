@@ -177,3 +177,14 @@
 .dumo-input-field:focus.dumo-input-small + .dumo-input-label {
   transform: translate(-3px, -18px) scale(0.8);
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
