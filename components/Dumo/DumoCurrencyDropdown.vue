@@ -94,7 +94,16 @@ const onChange = (e: any) => {
 </script>
 
 <style scoped>
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
 
+/* For Firefox */
+input[type='number'] {
+  -moz-appearance: textfield !important;
+}
 
 .dropdown-select-currency {
   padding: 10px 8px;
