@@ -43,6 +43,7 @@
   --rustica-bold: 700;
   --roc-grotesk-medium: 500;
   --roc-grotesk-bold: 600;
+  --elza-semibold: 600;
 }
 
 /* defaults */
@@ -223,6 +224,11 @@ h6 {
 .elza-bold {
   font-family: 'elza', sans-serif;
   font-weight: 700;
+  font-style: normal;
+}
+.elza-semibold {
+  font-family: 'elza', sans-serif;
+  font-weight: 600;
   font-style: normal;
 }
 .elza-bold-oblique {
