@@ -46,7 +46,7 @@ const classes = {
   color: var(--primary-green);
 }
 .arrow-img {
-  height: 14px;
+  height: 10px;
   width: auto;
   transition: 0.4s ease-in-out;
 }
