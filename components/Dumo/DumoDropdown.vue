@@ -6,7 +6,7 @@
       @click="showDropdown = !showDropdown">
       <span
         class="flex items-center gap-2"
-        :class="[uppercase ? 'uppercase' : 'capitalize']">
+        :class="[uppercase && 'uppercase', capitalize && 'capitalize']">
         <span v-if="modelValue">{{ modelValue }}</span>
         <span v-if="!modelValue">{{ placeholder }}</span>
       </span>
@@ -68,6 +68,7 @@ const props = defineProps<{
   border?: string
   sm?: boolean
   uppercase?: boolean
+  capitalize?: boolean
   loading?: boolean
 }>()
 
