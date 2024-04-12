@@ -6,7 +6,7 @@
       @click="showDropdown = !showDropdown">
       <span
         class="flex items-center gap-2"
-        :class="[uppercase && 'uppercase', capitalize && 'capitalize']">
+        :class="[uppercase ? 'uppercase' : 'capitalize']">
         <span v-if="modelValue">{{ modelValue }}</span>
         <span v-if="!modelValue">{{ placeholder }}</span>
       </span>
@@ -24,7 +24,8 @@
         v-if="!loading"
         v-for="(item, idx) in items"
         :key="idx"
-        class="flex items-center gap-2 capitalize cursor-pointer drop-content-padding"
+        class="flex items-center gap-2 cursor-pointer drop-content-padding"
+        :class="[uppercase && 'uppercase', capitalize && 'capitalize']"
         @click="selectItem(item)">
         {{ item.text }}
       </span>

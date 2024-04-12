@@ -111,7 +111,7 @@ const organizations = [
     value: 'chigisoft',
   },
   {
-    text: 'DUMO Ava',
+    text: 'Dumo ava',
     value: 'ava',
   },
 ]
