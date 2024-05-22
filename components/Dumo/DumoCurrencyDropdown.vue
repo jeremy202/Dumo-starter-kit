@@ -14,7 +14,9 @@
           </div>
         </div>
 
-        <div v-if="showDropdown" class="absolute dropdown-menu small-paragraph">
+        <div
+          v-if="showDropdown && items.length > 1"
+          class="absolute dropdown-menu small-paragraph">
           <span
             v-for="(item, idx) in items"
             :key="idx"
@@ -41,13 +43,13 @@ import { onClickOutside } from '@vueuse/core'
 
 type Item = {
   currency: string
-  amount: string
+  amount: string | number | null
 }
 
 const props = defineProps<{
   modelValue: Item
   placeholder?: string
-  items?: Item[]
+  items: Item[]
   width?: string
   background?: string
   color?: string
