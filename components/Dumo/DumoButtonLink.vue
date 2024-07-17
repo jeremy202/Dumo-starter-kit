@@ -6,7 +6,7 @@
     :style="styles"
     v-bind="$attrs">
     <slot></slot>
-    <img v-if="image" :src="image" alt="Image" />
+    <img v-if="image" :src="image" alt="Image" class="button-image"/>
   </NuxtLink>
 </template>
 
@@ -38,9 +38,21 @@ const classes = {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  transition: 0.4s ease-in-out;
 }
 
 .button-link.success {
   color: #3DAA7E;
+}
+
+.button-image {
+  height: auto;
+  width: auto;
+  transition: 0.4s ease-in-out;
+}
+  
+.button-link:hover > .button-image {
+  margin-left: 5px;
+  transition: 0.4s ease-in-out;
 }
 </style>
