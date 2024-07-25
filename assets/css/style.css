@@ -44,6 +44,7 @@
   --roc-grotesk-medium: 500;
   --roc-grotesk-bold: 600;
   --elza-semibold: 600;
+  --elza-semibold: 600;
 }
 
 /* defaults */
@@ -172,6 +173,12 @@ h6 {
   font-size: 14px;
   line-height: 1.42;
 }
+.web-small-paragraph {
+  font-family: 'elza', sans-serif;
+  font-weight: var(--rustica-semi-light) !important;
+  font-size: 14px;
+  line-height: 1.42;
+}
 
 .x-small-paragraph {
   font-family: 'rustica', sans-serif;
@@ -210,6 +217,16 @@ h6 {
 .rustica-bold {
   font-family: 'rustica', sans-serif;
   font-weight: var(--rustica-bold) !important;
+}
+.elza-regular {
+  font-family: 'elza', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.elza-medium {
+  font-family: 'elza', sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 .elza-medium {
   font-family: 'elza', sans-serif;
