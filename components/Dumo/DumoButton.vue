@@ -93,7 +93,7 @@ const styles = {
   height: 100%;
   transform: skewY(-3deg);
   transition: all 0.5s ease-in-out;
-  z-index: 1;
+  z-index: 0;
   padding: 14px 24px !important;
 }
 .button-cta-primary:hover::after {
