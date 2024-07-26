@@ -53,6 +53,7 @@ const styles = {
   white-space: nowrap;
   cursor: pointer;
   position: relative;
+  z-index: 2;
 }
 .button-secondary {
   color: var(--primary);
