@@ -7,8 +7,9 @@
 <script setup lang="ts">
 const props = defineProps<{
   secondary?: boolean;
-  cta?: boolean
-  alt?: boolean
+  cta?: boolean;
+  alt?: boolean;
+  ctaPrimary?: boolean
   lg?: boolean;
   sm?: boolean;
   xs?: boolean;
@@ -22,6 +23,7 @@ const props = defineProps<{
 const classes = {
   ["button-secondary"]: props.secondary,
   ["button-cta"]: props.cta,
+  ["button-cta-primary"]: props.ctaPrimary,
   ["button-alt"]: props.alt,
   ["button-small"]: props.sm,
   ["button-large"]: props.lg,
@@ -76,6 +78,24 @@ const styles = {
   z-index: -1;
 }
 .button-cta:hover::after {
+  transform: skewY(3deg);
+}
+.button-cta-primary::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  border: 1.5px solid var(--primary);
+  border-radius: 14px;
+  bottom: -5px;
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  transform: skewY(-3deg);
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
+  padding: 14px 24px !important;
+}
+.button-cta-primary:hover::after {
   transform: skewY(3deg);
 }
 .button-small {
