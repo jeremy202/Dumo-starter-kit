@@ -167,6 +167,12 @@ h6 {
   font-size: 18px;
   line-height: 1.22;
 }
+.web-mid-paragraph {
+  font-family: 'elza', sans-serif;
+  font-weight: var(--rustica-semi-light) !important;
+  font-size: 18px;
+  line-height: 1.22;
+}
 .small-paragraph {
   font-family: 'rustica', sans-serif;
   font-weight: var(--rustica-semi-light) !important;
