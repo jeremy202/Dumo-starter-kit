@@ -145,6 +145,12 @@ h6 {
   font-size: 64px;
   color: var(--dark);
 }
+.web-big-title {
+  font-family: 'elza', sans-serif;
+  font-weight: 900 !important;
+  font-size: 64px;
+  color: var(--dark);
+}
 
 .big-title-web {
   font-family: 'elza', sans-serif;
