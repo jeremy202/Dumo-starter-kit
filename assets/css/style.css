@@ -172,6 +172,13 @@ h6 {
   font-weight: var(--rustica-semi-light) !important;
   font-size: 20px;
   line-height: 1.2;
+
+    @media (max-width: 768px) {
+    font-family: 'elza', sans-serif;
+    font-weight: var(--rustica-semi-light) !important;
+    font-size: 18px;
+    line-height: 1.2;
+  }
 }
 .mid-paragraph {
   font-family: 'rustica', sans-serif;
