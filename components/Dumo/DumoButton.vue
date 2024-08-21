@@ -120,7 +120,7 @@ const styles = {
   cursor: not-allowed;
 }
 .button[disabled]:hover {
-  background-color: #bcbcbc;
+  background-color: #bcbcbc !important;
   color: #4a4a4a;
   cursor: not-allowed;
 }
