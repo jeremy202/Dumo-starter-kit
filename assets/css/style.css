@@ -287,6 +287,17 @@ h6 {
   color: var(--dark);
   text-transform: uppercase;
   width: max-content;
+  border-radius: 16px; /* Added border-radius */
+}
+
+.card-title-with-label {
+  padding: 5px 8px;
+  background-color: #e4e7ea;
+  color: var(--dark);
+  text-transform: uppercase;
+  width: max-content;
+  border-top-right-radius: 16px; /* Rounded border on the right side */
+  border-bottom-right-radius: 16px;
 }
 
 /* modal layout */
