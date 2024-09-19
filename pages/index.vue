@@ -72,8 +72,9 @@
         <DumoButtonLink
           color="#1E1F21"
           route="/"
-          image="/images/ic-verified.svg">
-          Button link
+          image="/images/ic-right-arrow-orange.svg"
+          uppercase>
+          see all
         </DumoButtonLink>
       </div>
 

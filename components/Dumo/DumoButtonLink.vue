@@ -39,7 +39,7 @@ const classes = {
   letter-spacing: 0.72px;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   transition: 0.4s ease-in-out;
   position: relative;
 }
@@ -52,10 +52,11 @@ const classes = {
   height: auto;
   width: auto;
   transition: 0.4s ease-in-out;
+  position: relative;
 }
 
 .button-link:hover > .button-image {
-  /* margin-left: 5px; */
+  left: -6px;
   transition: 0.4s ease-in-out;
 }
 
