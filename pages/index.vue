@@ -61,12 +61,21 @@
           @update:modelValue="setLanguage"></DumoImageDropdown>
       </div>
 
-      <DumoButtonLinkTwo
-        color="#1E1F21"
-        route="/"
-        image="/images/ic-right-arrow.svg">
-        Contact sales
-      </DumoButtonLinkTwo>
+      <div class="flex flex-col gap-6 my-6">
+        <DumoButtonLinkTwo
+          color="#1E1F21"
+          route="/"
+          image="/images/ic-right-arrow.svg">
+          Contact sales
+        </DumoButtonLinkTwo>
+
+        <DumoButtonLink
+          color="#1E1F21"
+          route="/"
+          image="/images/ic-verified.svg">
+          Button link
+        </DumoButtonLink>
+      </div>
 
       <div class="max-w-xs mt-5">
         <DumoCheckbox v-model="checked" />

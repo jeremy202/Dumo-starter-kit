@@ -5,8 +5,10 @@
     :class="classes"
     :style="styles"
     v-bind="$attrs">
-    <slot></slot>
-    <img v-if="image" :src="image" alt="Image" class="button-image"/>
+    <span class="button-link-text">
+      <slot></slot>
+    </span>
+    <img v-if="image" :src="image" alt="Image" class="button-image" />
   </NuxtLink>
 </template>
 
@@ -37,12 +39,13 @@ const classes = {
   letter-spacing: 0.72px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   transition: 0.4s ease-in-out;
+  position: relative;
 }
 
 .button-link.success {
-  color: #3DAA7E;
+  color: #3daa7e;
 }
 
 .button-image {
@@ -50,9 +53,17 @@ const classes = {
   width: auto;
   transition: 0.4s ease-in-out;
 }
-  
+
 .button-link:hover > .button-image {
-  margin-left: 5px;
+  /* margin-left: 5px; */
+  transition: 0.4s ease-in-out;
+}
+
+.button-link:hover > .button-link-text {
+  background: #e8eaf2 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  padding-right: 10px;
+  padding-left: 4px;
   transition: 0.4s ease-in-out;
 }
 </style>
