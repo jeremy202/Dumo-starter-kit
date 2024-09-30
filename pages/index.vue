@@ -78,8 +78,12 @@
         </DumoButtonLink>
       </div>
 
-      <div class="max-w-xs mt-5">
+      <div class="max-w-xs my-5">
         <DumoCheckbox v-model="checked" />
+      </div>
+
+      <div class="max-w-xs my-5">
+        <DumoToggle v-model="checked" />
       </div>
     </div>
   </div>

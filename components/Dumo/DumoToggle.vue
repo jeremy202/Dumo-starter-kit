@@ -1,6 +1,10 @@
 <template>
   <label class="custom-switch" :class="classes">
-    <input v-bind="$attrs" type="checkbox" :checked="isChecked" @change="toggleCheckbox">
+    <input
+      v-bind="$attrs"
+      type="checkbox"
+      :checked="isChecked"
+      @change="toggleCheckbox" />
     <span class="slider"></span>
     <slot></slot>
   </label>
@@ -10,25 +14,30 @@
 const props = defineProps<{
   modelValue?: boolean
   sm?: boolean
-  blue?: boolean;
-}>();
+  blue?: boolean
+}>()
 
 const classes = {
-  ["toggle-small"]: props.sm,
-  ["toggle-blue"]: props.blue,
-};
+  ['toggle-small']: props.sm,
+  ['toggle-blue']: props.blue,
+}
 
-const emit = defineEmits(["update:checked"]);
+const emit = defineEmits(['update:checked'])
 
-const isChecked = ref(props.modelValue);
+const isChecked = ref(props.modelValue)
+
+// update checked based on model value
+watchEffect(() => {
+  isChecked.value = props.modelValue
+})
 
 const toggleCheckbox = (e: Event) => {
   if (e.target instanceof HTMLInputElement) {
-    const newValue = e.target.checked;
-    isChecked.value = newValue;
-    emit('update:checked', newValue);
+    const newValue = e.target.checked
+    isChecked.value = newValue
+    emit('update:checked', newValue)
   }
-};
+}
 </script>
 
 <style scoped>
@@ -81,19 +90,19 @@ const toggleCheckbox = (e: Event) => {
   top: 1.5px;
 }
 
-input:checked+.slider {
+input:checked + .slider {
   background-color: #24b57a;
 }
 
-.toggle-blue input:checked+.slider {
-  background-color: #5476D2;
+.toggle-blue input:checked + .slider {
+  background-color: #5476d2;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   transform: translateX(23px);
 }
 
-.toggle-small input:checked+.slider:before {
+.toggle-small input:checked + .slider:before {
   transform: translateX(11px);
 }
 </style>
