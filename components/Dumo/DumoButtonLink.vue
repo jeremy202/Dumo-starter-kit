@@ -23,7 +23,7 @@ const props = defineProps<{
 
 const styles = {
   ...(props.color && { color: props.color }),
-  ...(props.uppercase && { textTransform: 'upperCase' }),
+  ...(props.uppercase && { textTransform: 'uppercase' }),
 }
 
 const classes = {
@@ -33,19 +33,26 @@ const classes = {
 
 <style scoped>
 .button-link {
-  color: var(--main-light);
   font-weight: 600;
   font-size: 12px;
   letter-spacing: 0.72px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  /* gap: 6px; */
   transition: 0.4s ease-in-out;
   position: relative;
+  color: var(--main-light);
 }
 
 .button-link.success {
   color: #3daa7e;
+}
+
+.button-link-text {
+  color: var(--main-light);
+  padding: 2px 4px;
+  border-radius: 6px;
+  transition: 0.4s ease-in-out;
 }
 
 .button-image {
@@ -55,16 +62,13 @@ const classes = {
   position: relative;
 }
 
-.button-link:hover > .button-image {
-  left: -6px;
-  transition: 0.4s ease-in-out;
-}
-
 .button-link:hover > .button-link-text {
-  background: #e8eaf2 0% 0% no-repeat padding-box;
-  border-radius: 6px;
+  background: #e8eaf2;
   padding-right: 10px;
   padding-left: 4px;
-  transition: 0.4s ease-in-out;
 }
+
+/* .button-link:hover > .button-image {
+  transform: translateX(0px);
+} */
 </style>
