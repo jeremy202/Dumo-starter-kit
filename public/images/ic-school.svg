@@ -1,0 +1,10 @@
+<svg id="ic-shool" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <rect id="Rectangle_3946" data-name="Rectangle 3946" width="28" height="28" rx="14" fill="#646464"/>
+  <g id="Group_1312" data-name="Group 1312" transform="translate(8 8)">
+    <g id="Group_1311" data-name="Group 1311" transform="translate(0)">
+      <path id="Path_900" data-name="Path 900" d="M3249.415,1028.774v4.363a1.333,1.333,0,0,1-1.333,1.333h-6.1a1.333,1.333,0,0,1-1.333-1.333v-4.363" transform="translate(-3239.034 -1022.47)" fill="none" stroke="#f7f8f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Path_901" data-name="Path 901" d="M3235.8,1014.75l6-4.888,6,4.888" transform="translate(-3235.795 -1009.862)" fill="none" stroke="#f7f8f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+    <circle id="Ellipse_203" data-name="Ellipse 203" cx="0.167" cy="0.167" r="0.167" transform="translate(5.833 6.667)" fill="none" stroke="#f7f8f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  </g>
+</svg>

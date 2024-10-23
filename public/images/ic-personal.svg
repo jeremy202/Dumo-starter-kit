@@ -1,0 +1,12 @@
+<svg id="ic-personal" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <rect id="Rectangle_3946" data-name="Rectangle 3946" width="28" height="28" rx="14" fill="#646464"/>
+  <g id="ic-profile" transform="translate(8.5 8)">
+    <g id="Group_80" data-name="Group 80" transform="translate(2.385 3.222)">
+      <g id="Group_79" data-name="Group 79" transform="translate(1.563)">
+        <circle id="Ellipse_10" data-name="Ellipse 10" cx="2.052" cy="2.052" r="2.052" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <path id="Path_91" data-name="Path 91" d="M3061.908,7615.149h0a3.127,3.127,0,0,0-3.126-3.127h-.978a3.127,3.127,0,0,0-3.126,3.127h0" transform="translate(-3054.678 -7607.919)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+    <circle id="Ellipse_11" data-name="Ellipse 11" cx="6" cy="6" r="6" transform="translate(0 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>

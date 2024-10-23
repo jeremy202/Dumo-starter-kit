@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center">
+  <div class="flex flex-col justify-center py-20">
     <div class="mx-auto">
       <h1>DUMO PROJECT STARTER TEMPLATE</h1>
     </div>
@@ -84,6 +84,18 @@
 
       <div class="max-w-xs my-5">
         <DumoToggle v-model="checked" />
+      </div>
+
+      <div class="my-5"><DumoCardTitle text="Dumo Card Title" /></div>
+      <div class="my-5">
+        <DumoCardTitle
+          text="Personal information"
+          image="/images/ic-personal.svg" />
+      </div>
+      <div class="my-5">
+        <DumoCardTitle
+          text="school information"
+          image="/images/ic-school.svg" />
       </div>
     </div>
   </div>
