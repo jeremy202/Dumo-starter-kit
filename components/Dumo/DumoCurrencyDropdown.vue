@@ -9,7 +9,7 @@
             <span v-if="selected">{{ selected.currency }}</span>
             <span v-if="!selected">USD</span>
           </div>
-          <div class="icon">
+          <div v-if="items.length > 1" class="icon">
             <img class="cursor-pointer" src="/images/arrow-down.png" alt="" />
           </div>
         </div>

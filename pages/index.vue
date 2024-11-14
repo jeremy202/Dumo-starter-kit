@@ -51,6 +51,13 @@
           @update:modelValue="setPrice"></dumo-currency-dropdown>
       </div>
       <div class="max-w-xs mt-5">
+        <!-- single item passed -->
+        <dumo-currency-dropdown
+          :items="[currencies[0]]"
+          v-model="currency"
+          @update:modelValue="setPrice"></dumo-currency-dropdown>
+      </div>
+      <div class="max-w-xs mt-5">
         <DumoImageDropdown
           :items="languages"
           width="100%"
