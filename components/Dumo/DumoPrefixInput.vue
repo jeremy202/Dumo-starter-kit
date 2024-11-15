@@ -1,14 +1,22 @@
 <template>
   <div>
     <div class="relative">
-      <div class="custom-label-ava">
+      <div
+        class="custom-label"
+        :class="[
+          position === 'left' ? 'left-3' : 'right-3',
+          'truncate max-w-[110px]',
+        ]">
         {{ prefix }}
       </div>
       <input
         :type="type"
-        class="custom-input-ava"
-        placeholder="school-name"
-        :value="props.modelValue"
+        class="custom-input"
+        :class="[
+          position === 'left' ? 'pl-[110px] pr-[12px]' : 'pl-[12px] pr-[110px]',
+        ]"
+        :placeholder="placeholder"
+        :value="modelValue"
         @input="onChange"
         v-bind="$attrs" />
     </div>
@@ -17,11 +25,12 @@
 
 <script setup lang="ts">
 const props = defineProps({
-  placeholder: { type: String },
-  label: { type: String },
+  placeholder: { type: String, default: 'Enter value' },
   modelValue: {},
   type: { type: String, default: 'text' },
-  prefix: { type: String, default: 'ava.dumo.io/' },
+  prefix: { type: String, default: '' },
+  position: { type: String, default: 'left' },
+  borderColor: { type: String, default: '#2a54c7' },
 })
 
 const $emit = defineEmits(['update:modelValue'])
@@ -32,8 +41,8 @@ const onChange = (e: any) => {
 </script>
 
 <style scoped>
-.custom-input-ava {
-  padding: 14px 12px 14px 110px;
+.custom-input {
+  padding-block: 14px;
   border: 1.5px solid #e7eaf4;
   border-radius: 14px;
   width: 100%;
@@ -46,18 +55,17 @@ const onChange = (e: any) => {
   line-height: 1.2;
 }
 
-.custom-input-ava:focus {
+.custom-input:focus {
   outline: 0;
   box-shadow: 0;
-  border-color: #2a54c7;
+  border-color: v-bind(borderColor);
   color: #1e1f21;
 }
 
-.custom-label-ava {
+.custom-label {
   position: absolute;
   color: #1e1f21;
   top: 50%;
   transform: translateY(-50%);
-  left: 12px;
 }
 </style>
