@@ -1,27 +1,38 @@
 <template>
   <div>
     <label class="container">
-      <input type="radio" :class="{ error: error }" :value="props.modelValue" @input="onChange" v-bind="$attrs">
+      <input
+        type="radio"
+        :checked="isChecked"
+        @input="handleChange"
+        v-bind="$attrs" />
       <span class="checkmark"></span>
     </label>
   </div>
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-  label: { type: String },
-  error: { type: Boolean },
-  defaultLabel: { type: Boolean, default: false },
-  errorMessage: { type: String },
-  modelValue: { type: String },
-  prepend: { type: String },
-});
+const props = defineProps<{
+  modelValue?: string
+  value: string
+}>()
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue'])
 
-const onChange = (e: any) => {
-  emit("update:modelValue", e.target.value);
-};
+const isChecked = ref(props.modelValue === props.value)
+
+watch(
+  () => props.modelValue,
+  (newValue) => {
+    isChecked.value = newValue === props.value
+  }
+)
+
+const handleChange = (e: Event) => {
+  if (e.target instanceof HTMLInputElement) {
+    emit('update:modelValue', props.value)
+  }
+}
 </script>
 
 <style scoped>
@@ -51,31 +62,31 @@ const onChange = (e: any) => {
   transform: translate(-50%, -50%);
   height: 16px;
   width: 16px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 50%;
-  border: 1px solid #D6D6D7;
+  border: 1px solid #d6d6d7;
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input~.checkmark {
-  background-color: #FFFFFF;
+.container:hover input ~ .checkmark {
+  background-color: #ffffff;
 }
 
 /* When the radio button is checked, add a blue background */
-.container input:checked~.checkmark {
-  border: 1px solid #3DAA7E;
-  background-color: #FFFFFF;
+.container input:checked ~ .checkmark {
+  border: 1px solid #3daa7e;
+  background-color: #ffffff;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
-  content: "";
+  content: '';
   position: absolute;
   display: none;
 }
 
 /* Show the indicator (dot/circle) when checked */
-.container input:checked~.checkmark:after {
+.container input:checked ~ .checkmark:after {
   display: block;
 }
 
@@ -86,6 +97,6 @@ const onChange = (e: any) => {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #3DAA7E;
+  background: #3daa7e;
 }
 </style>

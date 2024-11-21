@@ -21,10 +21,16 @@
 
     <div v-if="showDropdown" class="absolute dropdown-menu small-paragraph">
       <span
+        v-if="customOption"
+        @click="handleCustomOption"
+        class="rustica-medium text-[--main-light] cursor-pointer px-2 py-2.5">
+        {{ customOption }}
+      </span>
+      <span
         v-if="!loading"
         v-for="(item, idx) in items"
         :key="idx"
-        class="flex items-center gap-2 cursor-pointer drop-content-padding"
+        class="flex items-center gap-2 cursor-pointer px-2 py-2.5"
         :class="[uppercase && 'uppercase', capitalize && 'capitalize']"
         @click="selectItem(item)">
         {{ item.text }}
@@ -71,6 +77,8 @@ const props = defineProps<{
   uppercase?: boolean
   capitalize?: boolean
   loading?: boolean
+  customOption?: string
+  onCustomOptionClick?: () => void
 }>()
 
 const $emit = defineEmits(['update:modelValue'])
@@ -97,6 +105,14 @@ const selectItem = (item: Item) => {
   // selected.value = item.value;
   showDropdown.value = false
   $emit('update:modelValue', item.value)
+}
+
+const handleCustomOption = () => {
+  showDropdown.value = false
+
+  if (props.onCustomOptionClick) {
+    props.onCustomOptionClick()
+  }
 }
 </script>
 
@@ -138,10 +154,6 @@ const selectItem = (item: Item) => {
   background-color: #ebebeb;
   position: absolute;
   z-index: 2;
-}
-
-.drop-content-padding {
-  padding: 10px 16px;
 }
 
 .icon {

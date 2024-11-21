@@ -242,9 +242,7 @@
           </p>
 
           <div class="preview-section">
-            <DumoTextArea
-              label="Description"
-              placeholder="Enter your description" />
+            <DumoTextArea label="Description" placeholder="" />
             <DumoTextArea
               label="With Error"
               error
@@ -275,11 +273,75 @@
             </div>
           </div>
         </div>
+
+        <!-- DumoRadio -->
+        <div class="demo-item">
+          <h3 class="component-name">DumoRadio</h3>
+          <p class="component-description">Custom radio button component.</p>
+
+          <div class="preview-section">
+            <div class="flex flex-col gap-6">
+              <div class="flex items-center gap-4">
+                <DumoRadio
+                  name="example"
+                  v-model="selectedOption"
+                  value="option1" />
+
+                <span> option1 </span>
+              </div>
+              <div class="flex items-center gap-4">
+                <DumoRadio
+                  name="example"
+                  v-model="selectedOption"
+                  value="option2" />
+
+                <span> option2 </span>
+              </div>
+              <div class="flex items-center gap-4">
+                <DumoRadio
+                  name="example"
+                  v-model="selectedOption"
+                  value="option3" />
+
+                <span> option3 </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Dropdowns Section -->
       <section class="component-section">
         <h2 class="section-title">Dropdowns</h2>
+
+        <!-- DumoDropdown -->
+        <div class="demo-item">
+          <h3 class="component-name">DumoDropdown</h3>
+          <p class="component-description">
+            Dropdown component with different variants and props.
+          </p>
+
+          <div class="preview-section">
+            <DumoDropdown
+              placeholder="Custom dropdown option"
+              width="300px"
+              :items="dropdownItems"
+              custom-option="+ Create custom sender"
+              @custom-option-click="handleCustomOption"
+              v-model="selectedDropdownOption" />
+
+            <DumoDropdown
+              placeholder="Select option"
+              width="200px"
+              :items="dropdownItems"
+              v-model="selectedDropdownOption" />
+
+            <DumoDropdown
+              placeholder="loading..."
+              :items="dropdownItems"
+              loading />
+          </div>
+        </div>
 
         <!-- DumoCurrencyDropdown -->
         <div class="demo-item">
@@ -361,13 +423,25 @@ const currencies = [
   { currency: 'EUR', amount: '' },
   { currency: 'GBP', amount: '' },
 ]
+
+const dropdownItems = [
+  { text: 'USD', value: 'USD' },
+  { text: 'EUR', value: 'EUR' },
+  { text: 'GBP', value: 'GBP' },
+]
+
 const selectedCurrency = ref(currencies[0])
+const selectedOption = ref('')
+const selectedDropdownOption = ref('')
 
 const languages = [
   { text: 'English', value: 'en', image: '/images/english-flag.png' },
-  { text: 'French', value: 'fr', image: '/images/french-flag.png' },
 ]
 const selectedLanguage = ref(languages[0])
+
+const handleCustomOption = () => {
+  window.alert("I'll do what you want")
+}
 </script>
 
 <style scoped>

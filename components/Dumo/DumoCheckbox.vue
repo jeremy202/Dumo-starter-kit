@@ -1,6 +1,10 @@
 <template>
   <label class="container">
-    <input v-bind="$attrs" type="checkbox" v-model="isChecked" />
+    <input
+      v-bind="$attrs"
+      type="checkbox"
+      :checked="isChecked"
+      @change="handleChange" />
     <span class="checkmark"></span>
     <slot></slot>
   </label>
@@ -12,6 +16,21 @@ const props = defineProps<{
 }>()
 
 const isChecked = ref(props.modelValue)
+
+const emit = defineEmits(['update:modelValue'])
+
+watch(
+  () => props.modelValue,
+  (newValue) => {
+    isChecked.value = !!newValue
+  }
+)
+
+const handleChange = (e: Event) => {
+  if (e.target instanceof HTMLInputElement) {
+    emit('update:modelValue', e.target.checked)
+  }
+}
 </script>
 
 <style scoped>

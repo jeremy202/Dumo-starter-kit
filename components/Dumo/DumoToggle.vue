@@ -4,7 +4,7 @@
       v-bind="$attrs"
       type="checkbox"
       :checked="isChecked"
-      @change="toggleCheckbox" />
+      @change="handleChange" />
     <span class="slider"></span>
     <slot></slot>
   </label>
@@ -22,20 +22,21 @@ const classes = {
   ['toggle-blue']: props.blue,
 }
 
-const emit = defineEmits(['update:checked'])
+const emit = defineEmits(['update:modelValue'])
 
 const isChecked = ref(props.modelValue)
 
 // update checked based on model value
-watchEffect(() => {
-  isChecked.value = props.modelValue
-})
+watch(
+  () => props.modelValue,
+  (newValue) => {
+    isChecked.value = !!newValue
+  }
+)
 
-const toggleCheckbox = (e: Event) => {
+const handleChange = (e: Event) => {
   if (e.target instanceof HTMLInputElement) {
-    const newValue = e.target.checked
-    isChecked.value = newValue
-    emit('update:checked', newValue)
+    emit('update:modelValue', e.target.checked)
   }
 }
 </script>
