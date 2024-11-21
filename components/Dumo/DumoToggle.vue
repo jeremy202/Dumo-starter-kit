@@ -22,7 +22,7 @@ const classes = {
   ['toggle-blue']: props.blue,
 }
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'change'])
 
 const isChecked = ref(props.modelValue)
 
@@ -37,6 +37,7 @@ watch(
 const handleChange = (e: Event) => {
   if (e.target instanceof HTMLInputElement) {
     emit('update:modelValue', e.target.checked)
+    emit('change', e.target.checked)
   }
 }
 </script>
